@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SMX India – Industrial Sewing Excellence</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* =============================================
+           ROOT VARIABLES — Exact copy from index/about
+        ============================================= */
+        :root {
+            --smx-blue:   #006699;
+            --smx-cyan:   #00a0e9;
+            --smx-green:  #28a745;
+            --smx-dark:   #0b1d2e;
+            --glass-bg:   rgba(255, 255, 255, 0.95);
+        }
+
+        body { font-family: 'Montserrat', sans-serif; color: #444; overflow-x: hidden; }
+
+        /* =============================================
+           NAVBAR — Exact copy
+        ============================================= */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+        .nav-link { font-weight: 600; color: var(--smx-blue) !important; transition: 0.3s; }
+        .nav-link:hover { color: var(--smx-cyan) !important; transform: translateY(-2px); }
+        .nav-link.active { color: var(--smx-cyan) !important; }
+
+        .btn-search {
+            border: 2px solid #006699;
+            color: #006699;
+            border-radius: 50px;
+            font-weight: bold;
+            padding: 5px 20px;
+            transition: 0.3s;
+        }
+        .btn-search:hover { background: #006699; color: white; }
+        .logo { height: 70px; }
+
+        /* HERO SECTION — Matching aboutus.html style */
+        .hero-carousel {
+            background: url("contact.png") center/cover no-repeat;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-carousel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(0,102,153,0.85), rgba(0,160,233,0.75));
+        }
+        .hero-carousel .container { position: relative; z-index: 2; }
+        .hero-title { font-size: 4rem; font-weight: 700; }
+
+        /* CONTACT FORM & INFO CARDS */
+        .contact-info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            height: 100%;
+            border-bottom: 4px solid var(--smx-cyan);
+            transition: 0.3s;
+        }
+        .contact-info-card:hover { transform: translateY(-5px); }
+        .icon-box {
+            width: 60px; height: 60px;
+            background: rgba(0,160,233,0.1);
+            color: var(--smx-cyan);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 20px;
+        }
+
+        .form-control {
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            background: #f8f9fa;
+        }
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--smx-cyan);
+            background: #fff;
+        }
+        .btn-submit {
+            background: var(--smx-green);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            background: var(--smx-blue);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* MAP */
+        .map-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* =============================================
+           FOOTER — Exact copy
+        ============================================= */
+        .main-footer {
+            background: #0b1d2e;
+            padding: 80px 0 20px;
+            position: relative;
+            color: white;
+        }
+        .footer-heading {
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--smx-cyan);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: 0.3s;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .footer-links a:hover { color: var(--smx-cyan); transform: translateX(5px); }
+        .footer-contact-info i { color: var(--smx-cyan); }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="smx.jpg" class="logo" alt="SMX India">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#smxNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="smxNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="silversun.html">Silversun</a></li>
+                <li class="nav-item"><a class="nav-link" href="cerliani.html">Cerliani</a></li>
+                <li class="nav-item"><a class="nav-link" href="juki.html">Juki</a></li>
+                 <li class="nav-item"><a class="nav-link" href="richpeace.html">Richpeace</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contactus.html">Contact</a></li>
+            </ul>
+            <a href="#" class="btn btn-search"><i class="fa-solid fa-magnifying-glass me-2"></i>Search</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-carousel">
+    <div class="container text-center">
+        <div data-aos="fade-up">
+            <h1 class="hero-title text-white mb-4">Contact Us</h1>
+            <p class="lead text-white opacity-75 mx-auto" style="max-width: 700px;">
+                Get in touch with our expert team for industrial sewing solutions and technical support across India.
+            </p>
+        </div>
+    </div>
+</header>
+
+<section class="py-5 my-4">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-info-card">
+                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <h5 class="fw-bold">Our Office</h5>
+                    <p class="text-muted mb-0">The Tarun Plastic Estate, Andheri East, Mumbai, Maharashtra 400069</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-info-card">
+                    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <h5 class="fw-bold">Call Us</h5>
+                    <p class="text-muted mb-0">7506625436 / 9324613436</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-info-card">
+                    <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                    <h5 class="fw-bold">Email Us</h5>
+                    <p class="text-muted mb-0"> smxindia15@gmail.com </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="bg-white p-5 rounded-4 shadow-sm">
+                    <h2 class="fw-bold mb-4">Send a Message</h2>
+                    <form id="contactForm" action="http://localhost:5000/api/contact" method="POST">
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small text-uppercase">Full Name</label>
+                                <input type="text" name="full_name" class="form-control" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small text-uppercase">Email Address</label>
+                                <input type="email" name="email" class="form-control" placeholder="name@example.com" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label fw-bold small text-uppercase">Subject</label>
+                                <input type="text" name="subject" class="form-control" placeholder="Inquiry about Juki S81" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label fw-bold small text-uppercase">Message</label>
+                                <textarea name="message" class="form-control" rows="5" placeholder="How can we help you?" required></textarea>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-submit w-100">Send Inquiry</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="map-wrapper h-100">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.000000000000!2d72.868!3d19.117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA3JzAxLjEiTiA3MsKwNTInMDQuOCJF!5e0!3m2!1sen!2sin!4v1714200000000"
+                        width="100%" height="100%" style="border:0; min-height: 450px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Stop standard page redirect
+    
+    const submitBtn = this.querySelector('.btn-submit');
+    submitBtn.innerText = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Capture form field data
+    const formData = {
+        full_name: this.full_name.value,
+        email: this.email.value,
+        subject: this.subject.value,
+        message: this.message.value
+    };
+
+    try {
+        const response = await fetch(this.action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert('Thank you! Your inquiry has been submitted successfully.');
+            this.reset(); // Clear form fields
+        } else {
+            alert('Error: ' + result.error);
+        }
+    } catch (err) {
+        alert('Could not connect to server. Ensure your backend application is running.');
+    } finally {
+        submitBtn.innerText = 'Send Inquiry';
+        submitBtn.disabled = false;
+    }
+});
+</script>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div class="row g-5">
+            
+            <div class="col-lg-4 ">
+                <!-- Logo Instead of Text -->
+                <img src="smx1.png" alt="SMX India Logo" style="width:150px; ">
+
+                <p class="opacity-75 mt-3">
+                    Leading the Indian market with premium industrial sewing and embroidery technology since 1994.
+                </p>
+
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://www.facebook.com/Smxindia/" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/smxindia" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=917506625436" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="smxindia15@gmail.com" class="btn btn-outline-light btn-sm rounded-circle">
+                       <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@smxindia" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/sewing-machine-exchange-india/" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 footer-links">
+                <h6 class="footer-heading">Company</h6>
+                <a href="#">About Us</a>
+                <a href="#brands">Our Brands</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="col-lg-6 footer-contact-info">
+                <h6 class="footer-heading">Support</h6>
+                <p class="mb-2"><i class="fa-solid fa-envelope me-2"></i> smxindia15@gmail.com </p>
+                <p class="mb-2"><i class="fa-solid fa-phone me-2"></i> 7506625436 / 9324613436</p>
+                <p class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>
+                    The Tarun Plastic Estate, Andheri East,<br> Mumbai, Maharashtra 400069
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<style>
+    .main-footer img {
+    max-width: 100px;
+    height: auto;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 900, once: true });
+</script>
+<script>
+const response = await fetch(this.action, { ... })
+const result = await response.json();
+</script>
+</body>
+</html>

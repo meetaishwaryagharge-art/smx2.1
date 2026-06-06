@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMX India | Industrial Sewing Excellence</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --smx-blue: #006699;
+            --smx-cyan: #00a0e9;
+            --smx-green: #28a745;
+            --smx-dark: #0b1d2e;
+            --glass-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        body { font-family: 'Montserrat', sans-serif;; color: #444; overflow-x: hidden; }
+
+        /* Navbar Glassmorphism */
+        .navbar { 
+            background: var(--glass-bg); 
+            backdrop-filter: blur(10px); 
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+        .nav-link { font-weight: 600; color: var(--smx-blue) !important; transition: 0.3s; }
+        .nav-link:hover { color: var(--smx-cyan) !important; transform: translateY(-2px); }
+        
+        .btn-search { 
+            border: 2px solid#006699; 
+            color: #006699 ; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            padding: 5px 20px;
+            transition: 0.3s;
+        }
+        .btn-search:hover { background:#006699; color: white; }
+        
+       /* HERO SECTION */
+
+.hero-carousel{
+background:url("smxbanner.png") center/cover no-repeat;
+padding:120px 0;
+position:relative;
+overflow:hidden;
+}
+
+.hero-carousel::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+120deg,
+rgba(0,102,153,0.85),
+rgba(0,160,233,0.75)
+);
+}
+
+.hero-carousel .container{
+position:relative;
+z-index:2;
+}
+
+.hero-title{
+font-size:4rem;
+font-weight:700;
+}
+
+.machine-img{
+filter:drop-shadow(0 30px 50px rgba(0,0,0,0.3));
+animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+}
+
+        /* --- Features Bar --- */
+        .features-bar {
+            background: #28a745;
+            margin-top: -50px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 166, 81, 0.2);
+            position: relative;
+            z-index: 5;
+        }
+
+        .feature-item {
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .feature-item:last-child { border-right: none; }
+
+         /* Product Cards */
+      .category-card{
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.category-card:hover{
+    transform:translateY(-5px);
+}
+
+.image-box{
+    height:100px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.brand-img{
+    max-height:150px;
+    width:auto;
+}
+ /* --- Statistics --- */
+        .stat-item {
+            border-left: 4px solid #28a745;
+            padding-left: 25px;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover { background: var(--light-bg); }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #28a745;
+            display: block;
+        }
+       
+
+        /* Features */
+        .features-grid { background: var(--smx-green); padding: 50px 0; color: white; }
+        .feature-icon-circle {
+            width: 80px; height: 80px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+            transition: 0.4s;
+        }
+        .feature-item:hover .feature-icon-circle { background: white; transform: rotateY(180deg); }
+        .feature-item:hover .feature-icon-circle img { filter: none; }
+        .feature-icon-circle img { height: 40px; filter: brightness(0) invert(1); transition: 0.3s; }
+/* --- Footer Architecture --- */
+.main-footer {
+    background: #0b1d2e;/* Matches your brand blue */
+    padding: 80px 0 20px;
+    position: relative;
+    color: white;
+}
+
+.footer-heading {
+    color: #ffffff; /* White headings for better contrast on blue */
+    text-transform: uppercase;    letter-spacing: 2px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--smx-cyan); /* Adds a brand cyan accent line */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: 0.3s;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-links a:hover { 
+    color: var(--smx-cyan); /* Hover matches brand cyan */
+    transform: translateX(5px); 
+}
+
+.footer-contact-info i {
+    color: var(--smx-cyan); /* Icons pop with cyan */
+}
+
+/* Social Media Buttons */
+.main-footer .btn-outline-light {
+    border-color: rgba(255,255,255,0.5);
+}
+
+.main-footer .btn-outline-light:hover {
+    background-color: var(--smx-green); /* Hover matches brand green */
+    border-color: var(--smx-green);
+}
+        .logo {
+  height: 70px;
+}
+
+         </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="smx.jpg" class="logo">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#smxNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="smxNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+                  <!--  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="silversun.html" data-bs-toggle="dropdown">Silversun</a>
+                    <ul class="dropdown-menu shadow border-0">
+                        <li><a class="dropdown-item" href="#">S81 Series</a></li>
+                        <li><a class="dropdown-item" href="#">Lockstitch</a></li>
+                        <li><a class="dropdown-item" href="#">Overlock</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Juki</a>
+                    <ul class="dropdown-menu shadow border-0">
+                        <li><a class="dropdown-item" href="#">Industrial</a></li>
+                    </ul>
+                </li>-->
+                    <li class="nav-item"><a class="nav-link" href="silversun.html">Silversun</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cerliani.html">Cerliani</a></li>
+                    <li class="nav-item"><a class="nav-link" href="juki.html">Juki</a></li>
+                     <li class="nav-item"><a class="nav-link" href="richpeace.html">Richpeace</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="#" class="btn btn-search"><i class="fa-solid fa-magnifying-glass me-2"></i>Search</a>
+            </div>
+        </div>
+    </nav>
+  <!-- HERO -->
+
+<header class="hero-carousel">
+
+<div class="container">
+<div class="row align-items-center">
+
+<div class="col-lg-6" data-aos="fade-right">
+
+<span class="badge bg-white text-primary mb-3 px-3 py-2">
+Designed in Taiwan
+</span>
+
+<h1 class="hero-title text-white mb-4">
+SMX -S81/S81H
+</h1>
+
+<p class="lead text-white opacity-75 mb-4">
+Direct-drive, high speed single needle lockstitch machine with automatic thread trimmer.
+</p>
+
+<div class="d-flex gap-3">
+<button class="btn btn-light btn-lg px-5 rounded-pill">
+Explore Now
+</button>
+
+<button class="btn btn-outline-light btn-lg px-5 rounded-pill">
+Catalog
+</button>
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+</header>
+
+
+    <div class="container">
+        <div class="features-bar p-5 text-white" data-aos="fade-up">
+            <div class="row g-4">
+                <div class="col-md-4 feature-item text-center">
+                    <i class="fa-solid fa-globe fa-3x mb-3"></i>
+                    <h5 class="fw-bold">Global Importers</h5>
+                </div>
+                <div class="col-md-4 feature-item text-center">
+                    <i class="fa-solid fa-microchip fa-3x mb-3"></i>
+                    <h5 class="fw-bold">Best Solutions</h5>
+                </div>
+                <div class="col-md-4 feature-item text-center">
+                    <i class="fa-solid fa-chart-line fa-3x mb-3"></i>
+                    <h5 class="fw-bold">Results Driven</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+<section  id="brands" class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-down">
+            <h2 class="fw-800 display-5">Our Premium Brands</h2>
+            <p class="text-muted">Partnering with world leaders in sewing technology since 1994</p>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+
+            <!-- Brand 1 -->
+            <div class="col-lg-4 col-md-6 col-6" data-aos="fade-up">
+                <div class="category-card text-center p-4">
+                    <div class="image-box">
+                        <img src="brand_silversun.jpg" class="img-fluid brand-img" alt="Silver Sun">
+                    </div>
+                   
+                </div>
+            </div>
+
+            <!-- Brand 2 -->
+            <div class="col-lg-4 col-md-6 col-6" data-aos="fade-up">
+                <div class="category-card text-center p-4">
+                    <div class="image-box">
+                        <img src="brand_juki.jpg" class="img-fluid brand-img" alt="Juki">
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Brand 3 -->
+            <div class="col-lg-4 col-md-6 col-6" data-aos="fade-up">
+                <div class="category-card text-center p-4">
+                    <div class="image-box">
+                        <img src="brand_mce.jpg" class="img-fluid brand-img" alt="Cerliani">
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Brand 4 -->
+            <div class="col-lg-4 col-md-6 col-6" data-aos="fade-up">
+                <div class="category-card text-center p-4">
+                    <div class="image-box">
+                        <img src="brand_richpeace.jpg" class="img-fluid brand-img" alt="Richpeace">
+                    </div>
+                   
+                </div>
+            </div>
+
+            <!-- Brand 5 -->
+            <div class="col-lg-4 col-md-6 col-6" data-aos="fade-up">
+                <div class="category-card text-center p-4">
+                    <div class="image-box">
+                        <img src="jin.svg" class="img-fluid brand-img" alt="JIN">
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="features-grid">
+    <div class="container">
+        <div class="row text-center">
+
+            <div class="col-md-4 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon-circle">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h5>Importers & Distributors</h5>
+            </div>
+
+            <div class="col-md-4 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon-circle">
+                   <i class="fa-solid fa-gear"></i>
+                </div>
+                <h5>Since 1994 Sewing Solutions</h5>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon-circle">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h5>Results You Think</h5>
+            </div>
+
+        </div>
+    </div>
+</section>
+<style>
+    .feature-icon-circle{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#f5f5f5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 15px;
+}
+
+.feature-icon-circle i{
+    font-size:36px;
+    color: #28a745;
+}
+</style>
+
+
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center g-5">
+
+            <!-- Left Side Map -->
+            <div class="col-lg-7" data-aos="fade-right">
+                <div class="map-responsive">
+                    <iframe 
+                        src="https://www.google.com/maps?q=india&output=embed"
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius:10px;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Right Side Content -->
+            <div class="col-lg-5">
+
+                <div class="stat-item mb-5" data-aos="fade-left" data-aos-delay="100">
+                    <span class="stat-number" data-count="25">1000+ </span>
+                    <p class="h5 text-muted">Machines Delivered and Installed</p>
+                </div>
+
+
+                <div class="stat-item mb-5" data-aos="fade-left" data-aos-delay="100">
+                    <span class="stat-number" data-count="25">25+</span>
+                    <p class="h5 text-muted">Expert Employees</p>
+                </div>
+
+                <div class="stat-item" data-aos="fade-left" data-aos-delay="200">
+                    <span class="stat-number" data-count="98">98%</span>
+                    <p class="h5 text-muted">Client Satisfaction</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<style>
+    .map-responsive iframe{
+width:100%;
+height:420px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+</style>
+ <footer class="main-footer">
+    <div class="container footer-content">
+        <div class="row g-5">
+            
+            <div class="col-lg-4 ">
+                <!-- Logo Instead of Text -->
+                <img src="smx1.png" alt="SMX India Logo" style="width:150px; ">
+
+                <p class="opacity-75 mt-3">
+                    Leading the Indian market with premium industrial sewing and embroidery technology since 1994.
+                </p>
+
+               <div class="d-flex gap-3 mt-4">
+                    <a href="https://www.facebook.com/Smxindia/" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/smxindia" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=917506625436" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="smxindia15@gmail.com" class="btn btn-outline-light btn-sm rounded-circle">
+                       <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@smxindia" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/sewing-machine-exchange-india/" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 footer-links">
+                <h6 class="footer-heading">Company</h6>
+                <a href="#">About Us</a>
+                <a href="#brands">Our Brands</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="col-lg-6 footer-contact-info">
+                <h6 class="footer-heading">Support</h6>
+                <p class="mb-2"><i class="fa-solid fa-envelope me-2"></i>  smxindia15@gmail.com</p>
+                <p class="mb-2"><i class="fa-solid fa-phone me-2"></i> 7506625436 / 9324613436</p>
+                <p class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>
+                    The Tarun Plastic Estate, Andheri East,<br> Mumbai, Maharashtra 400069
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<style>
+    .main-footer img {
+    max-width: 100px;
+    height: auto;
+}
+</style>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>

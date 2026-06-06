@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juki Industrial Machines | SMX India</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* =============================================
+           ROOT — exact from cerliani.html / index.html
+        ============================================= */
+        :root {
+            --smx-blue:  #006699;
+            --smx-cyan:  #00a0e9;
+            --smx-green: #28a745;
+            --smx-dark:  #0b1d2e;
+            --glass-bg:  rgba(255, 255, 255, 0.95);
+        }
+
+        body { font-family: 'Montserrat', sans-serif; color: #444; overflow-x: hidden; background: #fcfcfc; }
+
+        /* =============================================
+           NAVBAR — exact from cerliani.html
+        ============================================= */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+        .nav-link { font-weight: 600; color: var(--smx-blue) !important; transition: 0.3s; }
+        .nav-link:hover { color: var(--smx-cyan) !important; transform: translateY(-2px); }
+        .nav-link.active { color: var(--smx-cyan) !important; }
+        .btn-search {
+            border: 2px solid #006699;
+            color: #006699;
+            border-radius: 50px;
+            font-weight: bold;
+            padding: 5px 20px;
+            transition: 0.3s;
+        }
+        .btn-search:hover { background: #006699; color: white; }
+        .logo { height: 70px; }
+
+        /* =============================================
+           HERO SECTION
+        ============================================= */
+        .hero-carousel {
+            background: url("juki.png") center/cover no-repeat;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-carousel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(0,102,153,0.88), rgba(0,160,233,0.78));
+        }
+        .hero-carousel .container { position: relative; z-index: 2; }
+        .hero-title { font-size: 4rem; font-weight: 700; }
+        .machine-img {
+            filter: drop-shadow(0 30px 50px rgba(0,0,0,0.3));
+            animation: float 6s ease-in-out infinite;
+            max-height: 320px;
+        }
+        @keyframes float {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* =============================================
+           INTRO STRIP — exact from cerliani.html
+        ============================================= */
+        .intro-strip { background: #28a745; border-bottom: 1px solid #eee; padding: 32px 0; }
+        .intro-item { border-right: 1px solid rgba(255,255,255,0.25); }
+        .intro-item:last-child { border-right: none; }
+        .intro-item i { color: white; font-size: 1.6rem; margin-bottom: 8px; }
+        .intro-item h6 { font-weight: 700; font-size: 0.85rem; color: white; margin-bottom: 2px; }
+        .intro-item p { font-size: 0.78rem; color: white; margin: 0; }
+
+        /* =============================================
+           ABOUT JUKI
+        ============================================= */
+        .about-section { background: #f8f9fa; padding: 65px 0; }
+        .section-label {
+            font-size: 11px; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; color: var(--smx-cyan);
+            display: block; margin-bottom: 10px;
+        }
+        .accent-bar {
+            width: 50px; height: 4px;
+            background: linear-gradient(90deg, var(--smx-blue), var(--smx-cyan));
+            border-radius: 2px; margin-bottom: 22px;
+        }
+        .img-showcase { border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,102,153,0.13); position: relative; }
+        .img-showcase img { width: 100%; height: 340px; object-fit: cover; display: block; }
+        .img-overlay-badge {
+            position: absolute; bottom: 20px; left: 20px;
+            background: rgba(0,102,153,0.92); color: white;
+            padding: 10px 18px; border-radius: 8px;
+            font-size: 12px; font-weight: 700;
+        }
+
+        /* =============================================
+           FILTER BAR
+        ============================================= */
+        .filter-bar {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 16px 0;
+            position: sticky; top: 88px; z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+        .filter-btn {
+            border: 1.5px solid #ddd; background: white; color: #555;
+            border-radius: 50px; padding: 6px 18px;
+            font-size: 12px; font-weight: 600; cursor: pointer;
+            transition: 0.25s; font-family: 'Montserrat', sans-serif;
+        }
+        .filter-btn:hover, .filter-btn.active { background: var(--smx-blue); color: white; border-color: var(--smx-blue); }
+        .results-count { font-size: 13px; color: #888; font-weight: 500; }
+
+        /* =============================================
+           PRODUCT GRID
+        ============================================= */
+        .product-section { background: #f4f6f9; padding: 55px 0 75px; }
+
+        .product-card {
+            background: white; border-radius: 16px;
+            border: 1.5px solid #eee; overflow: hidden;
+            height: 100%; display: flex; flex-direction: column;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 22px 50px rgba(0,102,153,0.13);
+            border-color: var(--smx-cyan);
+        }
+        .product-img-wrap {
+            background: #f9fbfd; height: 210px;
+            display: flex; align-items: center; justify-content: center;
+            padding: 28px; position: relative; overflow: hidden;
+        }
+        .product-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s; }
+        .product-card:hover .product-img-wrap img { transform: scale(1.08); }
+
+        .prod-tag {
+            position: absolute; top: 12px; left: 12px;
+            background: var(--smx-cyan); color: white;
+            font-size: 10px; font-weight: 700;
+            padding: 3px 10px; border-radius: 50px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .prod-tag.lockstitch  { background: var(--smx-blue); }
+        .prod-tag.overlock    { background: #c0392b; }
+        .prod-tag.bartack     { background: #e07b00; }
+        .prod-tag.special     { background: #7b2fbe; }
+
+        .product-body {
+            padding: 18px 20px 22px; flex: 1;
+            display: flex; flex-direction: column;
+            border-top: 1px solid #f0f0f0;
+        }
+        .product-body h3 { font-size: 14px; font-weight: 700; color: var(--smx-dark); margin-bottom: 7px; line-height: 1.45; }
+        .product-body p { font-size: 12px; color: #888; line-height: 1.65; flex: 1; margin-bottom: 16px; }
+        .btn-enquire {
+            background: transparent; border: 1.5px solid var(--smx-blue);
+            color: var(--smx-blue); font-size: 12px; font-weight: 700;
+            border-radius: 50px; padding: 7px 18px; transition: 0.3s;
+            text-decoration: none; display: inline-block; align-self: flex-start;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .btn-enquire:hover { background: var(--smx-blue); color: white; }
+
+        /* =============================================
+           WHY JUKI DARK BANNER
+        ============================================= */
+        .why-banner { background: var(--smx-blue); padding: 70px 0; color: white; }
+        .why-icon {
+            width: 65px; height: 65px;
+            background: rgba(0,160,233,0.15);
+            border: 1.5px solid rgba(0,160,233,0.3);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 18px;
+        }
+        .why-icon i { color: white; font-size: 1.5rem; }
+        .why-card { padding: 30px 20px; border-right: 1px solid rgba(255,255,255,0.08); }
+        .why-card:last-child { border-right: none; }
+        .why-card h6 { font-weight: 700; font-size: 0.95rem; margin-bottom: 8px; }
+        .why-card p { font-size: 0.82rem; opacity: 0.65; line-height: 1.7; margin: 0; }
+
+        /* =============================================
+           FEATURES STRIP — green (exact cerliani.html)
+        ============================================= */
+        .features-strip { background: var(--smx-green); padding: 45px 0; color: white; }
+        .fstrip-item { border-right: 1px solid rgba(255,255,255,0.2); }
+        .fstrip-item:last-child { border-right: none; }
+        .fstrip-icon {
+            width: 58px; height: 58px;
+            background: rgba(255,255,255,0.15); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 13px; font-size: 1.3rem;
+        }
+
+        /* =============================================
+           FOOTER — exact from cerliani.html
+        ============================================= */
+        .main-footer {
+            background: #0b1d2e;
+            padding: 80px 0 20px;
+            position: relative;
+            color: white;
+        }
+        .footer-heading {
+            color: #ffffff;
+            text-transform: uppercase; letter-spacing: 2px;
+            margin-bottom: 30px; font-weight: 700;
+            border-bottom: 2px solid var(--smx-cyan);
+            display: inline-block; padding-bottom: 5px;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none; transition: 0.3s;
+            display: block; margin-bottom: 10px;
+        }
+        .footer-links a:hover { color: var(--smx-cyan); transform: translateX(5px); }
+        .footer-contact-info i { color: var(--smx-cyan); }
+        .main-footer .btn-outline-light { border-color: rgba(255,255,255,0.5); }
+        .main-footer .btn-outline-light:hover { background-color: var(--smx-green); border-color: var(--smx-green); }
+    </style>
+</head>
+<body>
+
+<!-- =============================================
+     NAVBAR — exact from cerliani.html
+============================================= -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="smx.jpg" class="logo" alt="SMX India">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#smxNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="smxNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="silversun.html">Silversun</a></li>
+              
+                <li class="nav-item"><a class="nav-link" href="cerliani.html">Cerliani</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="juki.html">Juki</a></li>
+                   <li class="nav-item"><a class="nav-link" href="richpeace.html">Richpeace</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <a href="#" class="btn btn-search"><i class="fa-solid fa-magnifying-glass me-2"></i>Search</a>
+        </div>
+    </div>
+</nav>
+
+<!-- =============================================
+     HERO
+============================================= -->
+<header class="hero-carousel">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h1 class="hero-title text-white mb-4">Juki Industrial<br>Sewing Machines</h1>
+                <p class="lead text-white opacity-75 mb-4">
+                    Precision Japanese Engineering — Trusted by Garment Factories Worldwide
+                </p>
+                <a href="#products" class="btn btn-light btn-lg rounded-pill fw-bold px-5" style="color:var(--smx-blue);">
+                    <i class="fa-solid fa-arrow-down me-2"></i>View Products
+                </a>
+            </div>
+            <div class="col-lg-6 text-center d-none d-lg-block" data-aos="fade-left">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/SC/SD/VY/4047003/juki-ddl-8700-industrial-sewing-machine-500x500.jpg"
+                     alt="Juki Industrial Machine" class="machine-img img-fluid"
+                     onerror="this.style.display='none'">
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- =============================================
+     INTRO STRIP — green, exact cerliani.html
+============================================= -->
+<div class="intro-strip">
+    <div class="container">
+        <div class="row text-center g-3">
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="50">
+                <i class="fa-solid fa-flag mb-2 d-block"></i>
+                <h6>Made in Japan</h6>
+                <p>Genuine Juki Machines</p>
+            </div>
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-circle-check mb-2 d-block"></i>
+                <h6>ISO Certified</h6>
+                <p>Industry Standard Quality</p>
+            </div>
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="150">
+                <i class="fa-solid fa-truck-fast mb-2 d-block"></i>
+                <h6>Pan-India Delivery</h6>
+                <p>Fast & Safe Shipping</p>
+            </div>
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-headset mb-2 d-block"></i>
+                <h6>After-Sales Support</h6>
+                <p>Dedicated Service Team</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =============================================
+     ABOUT JUKI
+============================================= -->
+<section class="about-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="img-showcase">
+                    <img src="https://m.media-amazon.com/images/I/51EDwHpemML._AC_UF894,1000_QL80_.jpg"
+                         alt="Juki Machine"
+                         onerror="this.src='https://5.imimg.com/data5/SELLER/Default/2021/10/SC/SD/VY/4047003/juki-ddl-8700-industrial-sewing-machine-500x500.jpg'">
+                    <div class="img-overlay-badge"><i class="fa-solid fa-industry me-2"></i>Industrial Grade</div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <span class="section-label">About Juki</span>
+                <div class="accent-bar"></div>
+                <h2 class="fw-bold mb-4" style="font-size:2rem; color:var(--smx-dark);">
+                    Japan's No.1 Industrial<br>Sewing Machine Brand
+                </h2>
+                <p style="font-size:0.92rem; color:#666; line-height:1.8;" class="mb-3">
+                    Juki Corporation, founded in 1938 in Japan, is the world's leading manufacturer of industrial sewing machines. Trusted by garment factories across 170+ countries, Juki machines are synonymous with speed, reliability, and precision stitch quality.
+                </p>
+                <p style="font-size:0.92rem; color:#666; line-height:1.8;" class="mb-4">
+                    SMX India is a proud distributor of Juki machines in Mumbai and across India, offering the full range from high-speed lockstitch to specialized overlock, bartack, and computerized machines.
+                </p>
+                <div class="d-flex gap-4 flex-wrap">
+                    <div>
+                        <h4 class="fw-bold mb-0" style="color:var(--smx-blue);">85+</h4>
+                        <small style="color:#888;">Years of Innovation</small>
+                    </div>
+                    <div>
+                        <h4 class="fw-bold mb-0" style="color:var(--smx-blue);">170+</h4>
+                        <small style="color:#888;">Countries Served</small>
+                    </div>
+                    <div>
+                        <h4 class="fw-bold mb-0" style="color:var(--smx-blue);">500+</h4>
+                        <small style="color:#888;">Machine Models</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============================================
+     FILTER BAR
+============================================= -->
+<div class="filter-bar" id="products">
+    <div class="container d-flex align-items-center justify-content-between flex-wrap gap-2">
+        <div class="d-flex gap-2 flex-wrap">
+            <button class="filter-btn active" onclick="filterCards('all', this)">All Products</button>
+            <button class="filter-btn" onclick="filterCards('lockstitch', this)">Lockstitch</button>
+            <button class="filter-btn" onclick="filterCards('overlock', this)">Overlock</button>
+            <button class="filter-btn" onclick="filterCards('bartack', this)">Bartack</button>
+            <button class="filter-btn" onclick="filterCards('special', this)">Special Purpose</button>
+        </div>
+        <span class="results-count" id="results-count">Showing 8 products</span>
+    </div>
+</div>
+
+<!-- =============================================
+     PRODUCT GRID
+============================================= -->
+<section class="product-section">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- 1. DDL-9000C -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="lockstitch" data-aos="fade-up" data-aos-delay="50">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag lockstitch">Lockstitch</span>
+                        <img src="https://5.imimg.com/data5/XB/OA/MY-47969317/screen-shot-2018-02-21-at-9-16-45-pm-500x500.png"
+                             alt="Juki DDL-9000C"
+                             onerror="this.src='https://5.imimg.com/data5/SELLER/Default/2021/10/SC/SD/VY/4047003/juki-ddl-8700-industrial-sewing-machine-500x500.jpg'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Juki DDL-9000C</h3>
+                        <p>High-speed computerized lockstitch machine with automatic thread trimmer. Speed: 5,500 SPM. Ideal for light to medium weight fabrics.</p>
+                       <a href="#" class="btn-enquire open-product"
+   data-bs-toggle="modal"
+   data-bs-target="#productModal"
+
+   data-title="Juki DDL-9000C-FMS Sewing Machine"
+   data-img="https://5.imimg.com/data5/XB/OA/MY-47969317/screen-shot-2018-02-21-at-9-16-45-pm-500x500.png"
+   data-price="₹ 1,05,000"
+   data-desc="High-speed computerized lockstitch machine with automatic thread trimmer."
+
+   data-brand="Juki"
+   data-type="Full Digital Type"
+   data-needle="1"
+   data-model="DDL-9000C-FMS"
+   data-application="Medium-weight"
+   data-lubrication="Semi-dry"
+   data-speed="5000 sti/min"
+   data-length="5 mm"
+   data-availability="In Stock">
+   Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+            <!--popup-->
+<div class="modal fade" id="productModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-4 overflow-hidden">
+
+      <div class="modal-body p-4">
+
+        <div class="row g-4">
+
+          <!-- LEFT IMAGE -->
+          <div class="col-lg-6 text-center border-end">
+            <img id="pImage" class="img-fluid" style="max-height:350px;">
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="col-lg-6">
+
+            <h4 id="pTitle" class="fw-bold"></h4>
+            <h5 id="pPrice" class="text-dark mb-3"></h5>
+
+            <!-- SPEC TABLE -->
+            <table class="table table-sm">
+              <tbody id="pSpecs"></tbody>
+            </table>
+
+            <!-- DESCRIPTION -->
+            <p id="pDesc" class="small text-muted"></p>
+
+            <!-- ENQUIRY FORM -->
+            <div class="border-top pt-3 mt-3">
+              <h6 class="fw-bold">Send Enquiry</h6>
+
+              <form>
+                <input type="hidden" id="productName">
+
+                <div class="row g-2 mt-2">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="col-12">
+                    <textarea class="form-control" rows="2" placeholder="Message"></textarea>
+                  </div>
+                  <div class="col-12 text-end">
+                    <button class="btn btn-success px-4">Send Enquiry</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll(".open-product").forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    document.getElementById("pTitle").innerText = this.dataset.title;
+    document.getElementById("pImage").src = this.dataset.img;
+    document.getElementById("pPrice").innerText = this.dataset.price;
+    document.getElementById("pDesc").innerText = this.dataset.desc;
+
+    document.getElementById("productName").value = this.dataset.title;
+
+    document.getElementById("pSpecs").innerHTML = `
+      <tr><td>Brand</td><td>${this.dataset.brand}</td></tr>
+      <tr><td>Machine Type</td><td>${this.dataset.type}</td></tr>
+      <tr><td>No. of Needles</td><td>${this.dataset.needle}</td></tr>
+      <tr><td>Model</td><td>${this.dataset.model}</td></tr>
+      <tr><td>Application</td><td>${this.dataset.application}</td></tr>
+      <tr><td>Lubrication</td><td>${this.dataset.lubrication}</td></tr>
+      <tr><td>Max Speed</td><td>${this.dataset.speed}</td></tr>
+      <tr><td>Stitch Length</td><td>${this.dataset.length}</td></tr>
+      <tr><td>Availability</td><td>${this.dataset.availability}</td></tr>
+    `;
+  });
+});
+</script>
+<style>
+    .btn-enquire {
+    border: 2px solid #006699;
+    color: #006699;
+    padding: 8px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.btn-enquire:hover {
+    background: #006699;
+    color: #fff;
+}
+
+.modal-content {
+    border-radius: 16px;
+}
+</style>
+            <!-- 2. DDL-8700 -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="lockstitch" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag lockstitch">Lockstitch</span>
+                        <img src="https://m.media-amazon.com/images/I/51NTX4GbnwL._AC_UF894,1000_QL80_.jpg"
+                             alt="Juki DDL-8700"
+                             onerror="this.src='https://5.imimg.com/data5/SELLER/Default/2021/10/SC/SD/VY/4047003/juki-ddl-8700-industrial-sewing-machine-500x500.jpg'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Juki DDL-8700</h3>
+                        <p>High-speed 1-needle lockstitch machine with energy-saving direct-drive motor. Speed: 5,500 SPM. Low vibration and noise operation.</p>
+                       <a href="#" class="btn-enquire open-product"
+   data-bs-toggle="modal"
+   data-bs-target="#productModal2"
+
+   data-title="Juki DDL-8700 Industrial Sewing Machine"
+   data-img="https://m.media-amazon.com/images/I/51NTX4GbnwL._AC_UF894,1000_QL80_.jpg"
+   data-price="₹ 32,000 – ₹ 1,00,000"
+
+   data-desc="Standard high-speed 1-needle lockstitch machine known for low vibration, high efficiency, and consistent stitch quality. Ideal for light to medium fabrics."
+
+   data-brand="Juki"
+   data-type="Single Needle Lockstitch"
+   data-needle="1"
+   data-model="DDL-8700"
+   data-application="Medium-weight fabrics"
+   data-lubrication="Automatic"
+   data-speed="5500 sti/min"
+   data-length="5 mm"
+   data-availability="In Stock">
+
+   Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+  <!--popup-->
+<div class="modal fade" id="productModal2" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-4 overflow-hidden">
+
+      <div class="modal-body p-4">
+
+        <div class="row g-4">
+
+          <!-- LEFT IMAGE -->
+          <div class="col-lg-6 text-center border-end">
+            <img id="pImage2" class="img-fluid" style="max-height:350px;">
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="col-lg-6">
+
+            <h4 id="pTitle2" class="fw-bold"></h4>
+            <h5 id="pPrice2" class="text-dark mb-3"></h5>
+
+            <!-- SPEC TABLE -->
+            <table class="table table-sm">
+              <tbody id="pSpecs2"></tbody>
+            </table>
+
+            <!-- DESCRIPTION -->
+            <p id="pDesc2" class="small text-muted"></p>
+
+            <!-- ENQUIRY FORM -->
+            <div class="border-top pt-3 mt-3">
+              <h6 class="fw-bold">Send Enquiry</h6>
+
+              <form>
+                <input type="hidden" id="productName">
+
+                <div class="row g-2 mt-2">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="col-12">
+                    <textarea class="form-control" rows="2" placeholder="Message"></textarea>
+                  </div>
+                  <div class="col-12 text-end">
+                    <button class="btn btn-success px-4">Send Enquiry</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll(".open-product").forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    document.getElementById("pTitle2").innerText = this.dataset.title;
+    document.getElementById("pImage2").src = this.dataset.img;
+    document.getElementById("pPrice2").innerText = this.dataset.price;
+    document.getElementById("pDesc2").innerText = this.dataset.desc;
+
+    document.getElementById("productName").value = this.dataset.title;
+
+    document.getElementById("pSpecs2").innerHTML = `
+      <tr><td>Brand</td><td>${this.dataset.brand}</td></tr>
+      <tr><td>Machine Type</td><td>${this.dataset.type}</td></tr>
+      <tr><td>No. of Needles</td><td>${this.dataset.needle}</td></tr>
+      <tr><td>Model</td><td>${this.dataset.model}</td></tr>
+      <tr><td>Application</td><td>${this.dataset.application}</td></tr>
+      <tr><td>Lubrication</td><td>${this.dataset.lubrication}</td></tr>
+      <tr><td>Max Speed</td><td>${this.dataset.speed}</td></tr>
+      <tr><td>Stitch Length</td><td>${this.dataset.length}</td></tr>
+      <tr><td>Availability</td><td>${this.dataset.availability}</td></tr>
+    `;
+  });
+});
+</script>
+            <!-- 3. MO-6814S Overlock -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="overlock" data-aos="fade-up" data-aos-delay="150">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag overlock">Overlock</span>
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2021/11/KN/KS/GX/9180629/juki-mo-6814-sewing-machine-500x500.jpg"
+                             alt="Juki MO-6814S"
+                             onerror="this.src='https://5.imimg.com/data5/SELLER/Default/2021/10/SC/SD/VY/4047003/juki-ddl-8700-industrial-sewing-machine-500x500.jpg'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Juki MO-6814S</h3>
+                        <p>High-speed 4-thread overlock/safety stitch machine. Speed: 7,000 SPM. Exceptional seam strength for knitwear and sportswear applications.</p>
+                        <a href="#" class="btn-enquire open-product"
+   data-bs-toggle="modal"
+   data-bs-target="#productModal3"
+
+   data-title="Juki MO-6814S Industrial Overlock Machine"
+   data-img="https://5.imimg.com/data5/SELLER/Default/2021/11/KN/KS/GX/9180629/juki-mo-6814-sewing-machine-500x500.jpg"
+   data-price="₹ 50,000 – ₹ 70,000"
+
+   data-desc="High-speed 4-thread overlock machine designed for professional garment manufacturing. Ensures strong, elastic seams for knitwear and sportswear."
+
+   data-brand="Juki"
+   data-type="4 Thread Overlock"
+   data-needle="2 Needles"
+   data-model="MO-6814S"
+   data-application="Light to Medium Fabrics"
+   data-lubrication="Semi-Dry (Oil Stain Prevention)"
+   data-speed="7000 sti/min"
+   data-length="0.6 – 4.5 mm"
+   data-availability="In Stock">
+
+   Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+<!--popup-->
+<div class="modal fade" id="productModal3" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-4 overflow-hidden">
+
+      <div class="modal-body p-4">
+
+        <div class="row g-4">
+
+          <!-- LEFT IMAGE -->
+          <div class="col-lg-6 text-center border-end">
+            <img id="pImage3" class="img-fluid" style="max-height:350px;">
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="col-lg-6">
+
+            <h4 id="pTitle3" class="fw-bold"></h4>
+            <h5 id="pPrice3" class="text-dark mb-3"></h5>
+
+            <!-- SPEC TABLE -->
+            <table class="table table-sm">
+              <tbody id="pSpecs3"></tbody>
+            </table>
+
+            <!-- DESCRIPTION -->
+            <p id="pDesc3" class="small text-muted"></p>
+
+            <!-- ENQUIRY FORM -->
+            <div class="border-top pt-3 mt-3">
+              <h6 class="fw-bold">Send Enquiry</h6>
+
+              <form>
+                <input type="hidden" id="productName">
+
+                <div class="row g-2 mt-2">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="col-12">
+                    <textarea class="form-control" rows="2" placeholder="Message"></textarea>
+                  </div>
+                  <div class="col-12 text-end">
+                    <button class="btn btn-success px-4">Send Enquiry</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll(".open-product").forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    document.getElementById("pTitle3").innerText = this.dataset.title;
+    document.getElementById("pImage3").src = this.dataset.img;
+    document.getElementById("pPrice3").innerText = this.dataset.price;
+    document.getElementById("pDesc3").innerText = this.dataset.desc;
+
+    document.getElementById("productName").value = this.dataset.title;
+
+    document.getElementById("pSpecs3").innerHTML = `
+      <tr><td>Brand</td><td>${this.dataset.brand}</td></tr>
+      <tr><td>Machine Type</td><td>${this.dataset.type}</td></tr>
+      <tr><td>No. of Needles</td><td>${this.dataset.needle}</td></tr>
+      <tr><td>Model</td><td>${this.dataset.model}</td></tr>
+      <tr><td>Application</td><td>${this.dataset.application}</td></tr>
+      <tr><td>Lubrication</td><td>${this.dataset.lubrication}</td></tr>
+      <tr><td>Max Speed</td><td>${this.dataset.speed}</td></tr>
+      <tr><td>Stitch Length</td><td>${this.dataset.length}</td></tr>
+      <tr><td>Availability</td><td>${this.dataset.availability}</td></tr>
+    `;
+  });
+});
+</script>
+            <!-- 4. LBH-1790 Buttonhole -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="special" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag special">Special Purpose</span>
+                        <img src="https://apparelresources.com/wp-content/uploads/2014/11/juki1-copy.jpg"
+                             alt="Juki LBH-1790"
+                             onerror="this.src='https://5.imimg.com/data5/SELLER/Default/2021/10/SC/SD/VY/4047003/juki-ddl-8700-industrial-sewing-machine-500x500.jpg'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Juki LBH-1790</h3>
+                        <p>Computerized buttonhole machine for shirts and trousers. Supports up to 30 stitch patterns. Precise and consistent buttonhole quality.</p>
+                       <a href="#" class="btn-enquire open-product"
+   data-bs-toggle="modal"
+   data-bs-target="#productModal4"
+
+   data-title="Juki LBH-1790 Buttonhole Sewing Machine"
+   data-img="https://apparelresources.com/wp-content/uploads/2014/11/juki1-copy.jpg"
+   data-price="₹ 1,80,000 – ₹ 3,50,000"
+
+   data-desc="Computerized high-speed buttonhole sewing machine designed for shirts, uniforms, and trousers. Ensures precise, consistent buttonholes with multiple stitch patterns and automatic thread trimming."
+
+   data-brand="Juki"
+   data-type="Buttonhole Machine"
+   data-needle="1"
+   data-model="LBH-1790"
+   data-application="Shirts, Trousers, Uniforms"
+   data-lubrication="Semi-Dry"
+   data-speed="4200 sti/min"
+   data-length="0.5 – 40 mm (Buttonhole Length)"
+   data-availability="In Stock">
+
+   Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+<!--popup-->
+<div class="modal fade" id="productModal4" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-4 overflow-hidden">
+
+      <div class="modal-body p-4">
+
+        <div class="row g-4">
+
+          <!-- LEFT IMAGE -->
+          <div class="col-lg-6 text-center border-end">
+            <img id="pImage4" class="img-fluid" style="max-height:350px;">
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="col-lg-6">
+
+            <h4 id="pTitle4" class="fw-bold"></h4>
+            <h5 id="pPrice4" class="text-dark mb-3"></h5>
+
+            <!-- SPEC TABLE -->
+            <table class="table table-sm">
+              <tbody id="pSpecs4"></tbody>
+            </table>
+
+            <!-- DESCRIPTION -->
+            <p id="pDesc4" class="small text-muted"></p>
+
+            <!-- ENQUIRY FORM -->
+            <div class="border-top pt-3 mt-3">
+              <h6 class="fw-bold">Send Enquiry</h6>
+
+              <form>
+                <input type="hidden" id="productName">
+
+                <div class="row g-2 mt-2">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="col-12">
+                    <textarea class="form-control" rows="2" placeholder="Message"></textarea>
+                  </div>
+                  <div class="col-12 text-end">
+                    <button class="btn btn-success px-4">Send Enquiry</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll(".open-product").forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    document.getElementById("pTitle4").innerText = this.dataset.title;
+    document.getElementById("pImage4").src = this.dataset.img;
+    document.getElementById("pPrice4").innerText = this.dataset.price;
+    document.getElementById("pDesc4").innerText = this.dataset.desc;
+
+    document.getElementById("productName").value = this.dataset.title;
+
+    document.getElementById("pSpecs4").innerHTML = `
+      <tr><td>Brand</td><td>${this.dataset.brand}</td></tr>
+      <tr><td>Machine Type</td><td>${this.dataset.type}</td></tr>
+      <tr><td>No. of Needles</td><td>${this.dataset.needle}</td></tr>
+      <tr><td>Model</td><td>${this.dataset.model}</td></tr>
+      <tr><td>Application</td><td>${this.dataset.application}</td></tr>
+      <tr><td>Lubrication</td><td>${this.dataset.lubrication}</td></tr>
+      <tr><td>Max Speed</td><td>${this.dataset.speed}</td></tr>
+      <tr><td>Stitch Length</td><td>${this.dataset.length}</td></tr>
+      <tr><td>Availability</td><td>${this.dataset.availability}</td></tr>
+    `;
+  });
+});
+</script>
+            <!-- 5. MB-1800 Button Sewing -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="special" data-aos="fade-up" data-aos-delay="250">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag special">Special Purpose</span>
+                        <img src="https://www.juki.co.jp/industrial_e/admin/pdata/productphoto/20210113_071219_01.jpg"
+                             alt="Juki MB-1800"
+                             onerror="this.src='https://5.imimg.com/data5/SELLER/Default/2021/10/SC/SD/VY/4047003/juki-ddl-8700-industrial-sewing-machine-500x500.jpg'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Juki MB-1800</h3>
+                        <p>Button sewing machine for 2-hole and 4-hole buttons. Fully computerized with 10 built-in patterns. Wrapping and fastening functions included.</p>
+                       <a href="#" class="btn-enquire open-product"
+   data-bs-toggle="modal"
+   data-bs-target="#productModal5"
+
+   data-title="Juki MB-1800 Button Sewing Machine"
+   data-img="https://www.juki.co.jp/industrial_e/admin/pdata/productphoto/20210113_071219_01.jpg"
+   data-price="₹ 1,20,000 – ₹ 2,20,000"
+
+   data-desc="High-speed computerized button sewing machine for 2-hole and 4-hole buttons. Provides consistent stitching quality with automatic thread trimming and programmable patterns."
+
+   data-brand="Juki"
+   data-type="Button Sewing Machine"
+   data-needle="1"
+   data-model="MB-1800"
+   data-application="Shirts, Uniforms, Garments"
+   data-lubrication="Automatic"
+   data-speed="1500 sti/min"
+   data-length="Button Size: 10–28 mm"
+   data-availability="In Stock">
+
+   Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+<!--popup-->
+<div class="modal fade" id="productModal5" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-4 overflow-hidden">
+
+      <div class="modal-body p-4">
+
+        <div class="row g-4">
+
+          <!-- LEFT IMAGE -->
+          <div class="col-lg-6 text-center border-end">
+            <img id="pImage5" class="img-fluid" style="max-height:350px;">
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="col-lg-6">
+
+            <h4 id="pTitle5" class="fw-bold"></h4>
+            <h5 id="pPrice5" class="text-dark mb-3"></h5>
+
+            <!-- SPEC TABLE -->
+            <table class="table table-sm">
+              <tbody id="pSpecs5"></tbody>
+            </table>
+
+            <!-- DESCRIPTION -->
+            <p id="pDesc5" class="small text-muted"></p>
+
+            <!-- ENQUIRY FORM -->
+            <div class="border-top pt-3 mt-3">
+              <h6 class="fw-bold">Send Enquiry</h6>
+
+              <form>
+                <input type="hidden" id="productName">
+
+                <div class="row g-2 mt-2">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="col-12">
+                    <textarea class="form-control" rows="2" placeholder="Message"></textarea>
+                  </div>
+                  <div class="col-12 text-end">
+                    <button class="btn btn-success px-4">Send Enquiry</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll(".open-product").forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    document.getElementById("pTitle5").innerText = this.dataset.title;
+    document.getElementById("pImage5").src = this.dataset.img;
+    document.getElementById("pPrice5").innerText = this.dataset.price;
+    document.getElementById("pDesc5").innerText = this.dataset.desc;
+
+    document.getElementById("productName").value = this.dataset.title;
+
+    document.getElementById("pSpecs5").innerHTML = `
+      <tr><td>Brand</td><td>${this.dataset.brand}</td></tr>
+      <tr><td>Machine Type</td><td>${this.dataset.type}</td></tr>
+      <tr><td>No. of Needles</td><td>${this.dataset.needle}</td></tr>
+      <tr><td>Model</td><td>${this.dataset.model}</td></tr>
+      <tr><td>Application</td><td>${this.dataset.application}</td></tr>
+      <tr><td>Lubrication</td><td>${this.dataset.lubrication}</td></tr>
+      <tr><td>Max Speed</td><td>${this.dataset.speed}</td></tr>
+      <tr><td>Stitch Length</td><td>${this.dataset.length}</td></tr>
+      <tr><td>Availability</td><td>${this.dataset.availability}</td></tr>
+    `;
+  });
+});
+</script>
+            <!-- 6. LK-1900 Bartack -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="bartack" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag bartack">Bartack</span>
+                        <img src="https://cdn.wotol.com/xVK3qz05aNbarH0uFvkL3_kF0XM=/fit-in/750x750/media%2Fpictures%2F95e%2F95e12bc6-78a3-4a82-96f8-9bbe689bd3d2.jpeg"
+                             alt="Juki LK-1900"
+                             onerror="this.src='https://5.imimg.com/data5/SELLER/Default/2021/10/SC/SD/VY/4047003/juki-ddl-8700-industrial-sewing-machine-500x500.jpg'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Juki LK-1900A</h3>
+                        <p>Computerized high-speed pattern tacking machine. 28 built-in bartack patterns. Ideal for belt loops, pocket corners, and zipper reinforcement.</p>
+                        <a href="#" class="btn-enquire open-product"
+   data-bs-toggle="modal"
+   data-bs-target="#productModal6"
+
+   data-title="Juki LK-1900A Bartack Sewing Machine"
+   data-img="https://cdn.wotol.com/xVK3qz05aNbarH0uFvkL3_kF0XM=/fit-in/750x750/media%2Fpictures%2F95e%2F95e12bc6-78a3-4a82-96f8-9bbe689bd3d2.jpeg"
+   data-price="₹ 2,00,000 – ₹ 3,50,000"
+
+   data-desc="Computerized high-speed bartack sewing machine designed for reinforcement stitching in garments such as belt loops, pocket corners, and zippers. Ensures strong and consistent stitch patterns."
+
+   data-brand="Juki"
+   data-type="Bartack Machine"
+   data-needle="1"
+   data-model="LK-1900A"
+   data-application="Denim, Trousers, Workwear"
+   data-lubrication="Semi-Dry"
+   data-speed="3200 sti/min"
+   data-length="Bartack Length: 0.1 – 40 mm"
+   data-availability="In Stock">
+
+   Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+<!--popup-->
+<div class="modal fade" id="productModal6" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-4 overflow-hidden">
+
+      <div class="modal-body p-4">
+
+        <div class="row g-4">
+
+          <!-- LEFT IMAGE -->
+          <div class="col-lg-6 text-center border-end">
+            <img id="pImage6" class="img-fluid" style="max-height:350px;">
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="col-lg-6">
+
+            <h4 id="pTitle6" class="fw-bold"></h4>
+            <h5 id="pPrice6" class="text-dark mb-3"></h5>
+
+            <!-- SPEC TABLE -->
+            <table class="table table-sm">
+              <tbody id="pSpecs6"></tbody>
+            </table>
+
+            <!-- DESCRIPTION -->
+            <p id="pDesc6" class="small text-muted"></p>
+
+            <!-- ENQUIRY FORM -->
+            <div class="border-top pt-3 mt-3">
+              <h6 class="fw-bold">Send Enquiry</h6>
+
+              <form>
+                <input type="hidden" id="productName">
+
+                <div class="row g-2 mt-2">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="col-12">
+                    <textarea class="form-control" rows="2" placeholder="Message"></textarea>
+                  </div>
+                  <div class="col-12 text-end">
+                    <button class="btn btn-success px-4">Send Enquiry</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll(".open-product").forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    document.getElementById("pTitle6").innerText = this.dataset.title;
+    document.getElementById("pImage6").src = this.dataset.img;
+    document.getElementById("pPrice6").innerText = this.dataset.price;
+    document.getElementById("pDesc6").innerText = this.dataset.desc;
+
+    document.getElementById("productName").value = this.dataset.title;
+
+    document.getElementById("pSpecs6").innerHTML = `
+      <tr><td>Brand</td><td>${this.dataset.brand}</td></tr>
+      <tr><td>Machine Type</td><td>${this.dataset.type}</td></tr>
+      <tr><td>No. of Needles</td><td>${this.dataset.needle}</td></tr>
+      <tr><td>Model</td><td>${this.dataset.model}</td></tr>
+      <tr><td>Application</td><td>${this.dataset.application}</td></tr>
+      <tr><td>Lubrication</td><td>${this.dataset.lubrication}</td></tr>
+      <tr><td>Max Speed</td><td>${this.dataset.speed}</td></tr>
+      <tr><td>Stitch Length</td><td>${this.dataset.length}</td></tr>
+      <tr><td>Availability</td><td>${this.dataset.availability}</td></tr>
+    `;
+  });
+});
+</script>
+            <!-- 7. MO-3616 Overlock -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="overlock" data-aos="fade-up" data-aos-delay="350">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag overlock">Overlock</span>
+                        <img src="https://images.finncdn.no/dynamic/1280w/item/433400568/1b524538-dbbe-41f1-9763-0a98c140de01"
+                             alt="Juki MO-3616"
+                             onerror="this.src='https://5.imimg.com/data5/SELLER/Default/2021/10/SC/SD/VY/4047003/juki-ddl-8700-industrial-sewing-machine-500x500.jpg'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Juki MO-3616</h3>
+                        <p>3-thread overlock machine with differential feed. Speed: 6,500 SPM. Perfect for elasticated seams, rolled hem, and knit fabric edge finishing.</p>
+                       <a href="#" class="btn-enquire open-product"
+   data-bs-toggle="modal"
+   data-bs-target="#productModal7"
+
+   data-title="Juki MO-3616 Overlock Sewing Machine"
+   data-img="https://images.finncdn.no/dynamic/1280w/item/433400568/1b524538-dbbe-41f1-9763-0a98c140de01"
+   data-price="₹ 45,000 – ₹ 75,000"
+
+   data-desc="High-speed 3-thread overlock machine with differential feed system. Ideal for knitwear, elastic fabrics, and rolled hemming with clean and durable edge finishing."
+
+   data-brand="Juki"
+   data-type="3 Thread Overlock"
+   data-needle="1"
+   data-model="MO-3616"
+   data-application="Knitwear, Stretch Fabrics"
+   data-lubrication="Automatic"
+   data-speed="6500 sti/min"
+   data-length="0.6 – 4 mm"
+   data-availability="In Stock">
+
+   Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+<!--popup-->
+<div class="modal fade" id="productModal7" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-4 overflow-hidden">
+
+      <div class="modal-body p-4">
+
+        <div class="row g-4">
+
+          <!-- LEFT IMAGE -->
+          <div class="col-lg-6 text-center border-end">
+            <img id="pImage7" class="img-fluid" style="max-height:350px;">
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="col-lg-6">
+
+            <h4 id="pTitle7" class="fw-bold"></h4>
+            <h5 id="pPrice7" class="text-dark mb-3"></h5>
+
+            <!-- SPEC TABLE -->
+            <table class="table table-sm">
+              <tbody id="pSpecs7"></tbody>
+            </table>
+
+            <!-- DESCRIPTION -->
+            <p id="pDesc7" class="small text-muted"></p>
+
+            <!-- ENQUIRY FORM -->
+            <div class="border-top pt-3 mt-3">
+              <h6 class="fw-bold">Send Enquiry</h6>
+
+              <form>
+                <input type="hidden" id="productName">
+
+                <div class="row g-2 mt-2">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="col-12">
+                    <textarea class="form-control" rows="2" placeholder="Message"></textarea>
+                  </div>
+                  <div class="col-12 text-end">
+                    <button class="btn btn-success px-4">Send Enquiry</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll(".open-product").forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    document.getElementById("pTitle7").innerText = this.dataset.title;
+    document.getElementById("pImage7").src = this.dataset.img;
+    document.getElementById("pPrice7").innerText = this.dataset.price;
+    document.getElementById("pDesc7").innerText = this.dataset.desc;
+
+    document.getElementById("productName").value = this.dataset.title;
+
+    document.getElementById("pSpecs7").innerHTML = `
+      <tr><td>Brand</td><td>${this.dataset.brand}</td></tr>
+      <tr><td>Machine Type</td><td>${this.dataset.type}</td></tr>
+      <tr><td>No. of Needles</td><td>${this.dataset.needle}</td></tr>
+      <tr><td>Model</td><td>${this.dataset.model}</td></tr>
+      <tr><td>Application</td><td>${this.dataset.application}</td></tr>
+      <tr><td>Lubrication</td><td>${this.dataset.lubrication}</td></tr>
+      <tr><td>Max Speed</td><td>${this.dataset.speed}</td></tr>
+      <tr><td>Stitch Length</td><td>${this.dataset.length}</td></tr>
+      <tr><td>Availability</td><td>${this.dataset.availability}</td></tr>
+    `;
+  });
+});
+</script>
+            <!-- 8. DDL-8000A -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="lockstitch" data-aos="fade-up" data-aos-delay="400">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag lockstitch">Lockstitch</span>
+                        <img src="https://5.imimg.com/data5/ZF/SA/IV/SELLER-17369446/juki-ddl-8000a-series-direct-drive-1-needle-auto-lifter-motor-driven.jpg"
+                             alt="Juki DDL-8000A"
+                             onerror="this.src='https://5.imimg.com/data5/SELLER/Default/2021/10/SC/SD/VY/4047003/juki-ddl-8700-industrial-sewing-machine-500x500.jpg'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Juki DDL-8000A</h3>
+                        <p>Automatic 1-needle lockstitch machine with thread trimmer and presser foot lifter. Equipped with built-in panel for easy operation setting.</p>
+                       <a href="#" class="btn-enquire open-product"
+   data-bs-toggle="modal"
+   data-bs-target="#productModal8"
+
+   data-title="Juki DDL-8000A Automatic Lockstitch Machine"
+   data-img="https://5.imimg.com/data5/ZF/SA/IV/SELLER-17369446/juki-ddl-8000a-series-direct-drive-1-needle-auto-lifter-motor-driven.jpg"
+   data-price="₹ 75,000 – ₹ 1,40,000"
+
+   data-desc="Advanced automatic single-needle lockstitch machine with built-in control panel, thread trimmer, and presser foot lifter. Designed for high productivity and easy operation in garment manufacturing."
+
+   data-brand="Juki"
+   data-type="Single Needle Lockstitch (Automatic)"
+   data-needle="1"
+   data-model="DDL-8000A"
+   data-application="Light to Medium Fabrics"
+   data-lubrication="Semi-Dry"
+   data-speed="5000 sti/min"
+   data-length="5 mm"
+   data-availability="In Stock">
+
+   Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+<!--popup-->
+<div class="modal fade" id="productModal8" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-4 overflow-hidden">
+
+      <div class="modal-body p-4">
+
+        <div class="row g-4">
+
+          <!-- LEFT IMAGE -->
+          <div class="col-lg-6 text-center border-end">
+            <img id="pImage8" class="img-fluid" style="max-height:350px;">
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="col-lg-6">
+
+            <h4 id="pTitle8" class="fw-bold"></h4>
+            <h5 id="pPrice8" class="text-dark mb-3"></h5>
+
+            <!-- SPEC TABLE -->
+            <table class="table table-sm">
+              <tbody id="pSpecs8"></tbody>
+            </table>
+
+            <!-- DESCRIPTION -->
+            <p id="pDesc8" class="small text-muted"></p>
+
+            <!-- ENQUIRY FORM -->
+            <div class="border-top pt-3 mt-3">
+              <h6 class="fw-bold">Send Enquiry</h6>
+
+              <form>
+                <input type="hidden" id="productName">
+
+                <div class="row g-2 mt-2">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="col-12">
+                    <textarea class="form-control" rows="2" placeholder="Message"></textarea>
+                  </div>
+                  <div class="col-12 text-end">
+                    <button class="btn btn-success px-4">Send Enquiry</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll(".open-product").forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    document.getElementById("pTitle8").innerText = this.dataset.title;
+    document.getElementById("pImage8").src = this.dataset.img;
+    document.getElementById("pPrice8").innerText = this.dataset.price;
+    document.getElementById("pDesc8").innerText = this.dataset.desc;
+
+    document.getElementById("productName").value = this.dataset.title;
+
+    document.getElementById("pSpecs8").innerHTML = `
+      <tr><td>Brand</td><td>${this.dataset.brand}</td></tr>
+      <tr><td>Machine Type</td><td>${this.dataset.type}</td></tr>
+      <tr><td>No. of Needles</td><td>${this.dataset.needle}</td></tr>
+      <tr><td>Model</td><td>${this.dataset.model}</td></tr>
+      <tr><td>Application</td><td>${this.dataset.application}</td></tr>
+      <tr><td>Lubrication</td><td>${this.dataset.lubrication}</td></tr>
+      <tr><td>Max Speed</td><td>${this.dataset.speed}</td></tr>
+      <tr><td>Stitch Length</td><td>${this.dataset.length}</td></tr>
+      <tr><td>Availability</td><td>${this.dataset.availability}</td></tr>
+    `;
+  });
+});
+</script>
+        </div><!-- /row -->
+    </div>
+</section>
+
+<!-- =============================================
+     WHY JUKI — dark banner (exact style cerliani)
+============================================= -->
+<section class="why-banner">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-label" style="color:var(--smx-cyan);">The Juki Difference</span>
+            <h2 class="fw-bold" style="font-size:2rem;">Built for Industrial Performance</h2>
+        </div>
+        <div class="row g-0 text-center">
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <h6>High Speed</h6>
+                <p>Up to 5,500–8,000 SPM depending on model. Consistent stitching at peak speeds without skips.</p>
+            </div>
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-microchip"></i></div>
+                <h6>Smart Technology</h6>
+                <p>Computerized direct-drive motors for energy savings, lower noise, and precision stitch control.</p>
+            </div>
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-wrench"></i></div>
+                <h6>Low Maintenance</h6>
+                <p>Self-lubricating components and automatic oiling systems reduce downtime and service costs.</p>
+            </div>
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-puzzle-piece"></i></div>
+                <h6>Wide Application</h6>
+                <p>From delicate silks to heavy denim — Juki has a specialized machine for every fabric and use case.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============================================
+     FEATURES STRIP — green (exact cerliani.html)
+============================================= 
+<section class="features-strip">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-4 fstrip-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="fstrip-icon"><i class="fa-solid fa-globe"></i></div>
+                <h6 class="fw-bold mb-1">Authorized Distributor</h6>
+                <p class="small opacity-75 mb-0">Sourcing genuine Juki machines directly from Japan</p>
+            </div>
+            <div class="col-md-4 fstrip-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="fstrip-icon"><i class="fa-solid fa-gear"></i></div>
+                <h6 class="fw-bold mb-1">Since 1970 Sewing Solutions</h6>
+                <p class="small opacity-75 mb-0">Decades of expertise in industrial sewing machines</p>
+            </div>
+            <div class="col-md-4 fstrip-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="fstrip-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h6 class="fw-bold mb-1">Results You Can Trust</h6>
+                <p class="small opacity-75 mb-0">98% customer satisfaction across India</p>
+            </div>
+        </div>
+    </div>
+</section>-->
+
+<!-- =============================================
+     FOOTER — exact from cerliani.html
+============================================= -->
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div class="row g-5">
+            
+            <div class="col-lg-4 ">
+                <!-- Logo Instead of Text -->
+                <img src="smx1.png" alt="SMX India Logo" style="width:150px; ">
+
+                <p class="opacity-75 mt-3">
+                    Leading the Indian market with premium industrial sewing and embroidery technology since 1994.
+                </p>
+
+               <div class="d-flex gap-3 mt-4">
+                    <a href="https://www.facebook.com/Smxindia/" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/smxindia" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=917506625436" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="smxindia15@gmail.com" class="btn btn-outline-light btn-sm rounded-circle">
+                       <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@smxindia" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/sewing-machine-exchange-india/" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 footer-links">
+                <h6 class="footer-heading">Company</h6>
+                <a href="#">About Us</a>
+                <a href="#brands">Our Brands</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="col-lg-6 footer-contact-info">
+                <h6 class="footer-heading">Support</h6>
+                <p class="mb-2"><i class="fa-solid fa-envelope me-2"></i> smxindia15@gmail.com</p>
+                <p class="mb-2"><i class="fa-solid fa-phone me-2"></i> 7506625436 / 9324613436</p>
+                <p class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>
+                    The Tarun Plastic Estate, Andheri East,<br> Mumbai, Maharashtra 400069
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<style>
+    .main-footer img {
+    max-width: 100px;
+    height: auto;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+
+    function filterCards(category, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const items = document.querySelectorAll('.product-item');
+        let count = 0;
+        items.forEach(item => {
+            const match = category === 'all' || item.dataset.category === category;
+            item.style.display = match ? '' : 'none';
+            if (match) count++;
+        });
+        document.getElementById('results-count').textContent =
+            `Showing ${count} product${count !== 1 ? 's' : ''}`;
+    }
+</script>
+</body>
+</html>

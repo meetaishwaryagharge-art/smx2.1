@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richpeace CNC Sewing Machines | SMX India</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --smx-blue:  #006699;
+            --smx-cyan:  #00a0e9;
+            --smx-green: #28a745;
+            --smx-dark:  #0b1d2e;
+            --glass-bg:  rgba(255, 255, 255, 0.95);
+        }
+        body { font-family: 'Montserrat', sans-serif; color: #444; overflow-x: hidden; }
+
+        /* NAVBAR */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+        .nav-link { font-weight: 600; color: var(--smx-blue) !important; transition: 0.3s; }
+        .nav-link:hover { color: var(--smx-cyan) !important; transform: translateY(-2px); }
+        .nav-link.active { color: var(--smx-cyan) !important; }
+        .btn-search {
+            border: 2px solid #006699; color: #006699;
+            border-radius: 50px; font-weight: bold; padding: 5px 20px; transition: 0.3s;
+        }
+        .btn-search:hover { background: #006699; color: white; }
+        .logo { height: 70px; }
+
+        /* DROPDOWN MEGAMENU */
+        .navbar .dropdown-menu {
+            border: none;
+            box-shadow: 0 8px 30px rgba(0,102,153,0.15);
+            border-radius: 12px;
+            padding: 16px;
+            min-width: 260px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: dropFade 0.2s ease;
+        }
+        @keyframes dropFade {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        /* Hover-open on desktop */
+        @media (min-width: 992px) {
+            .navbar .nav-item.dropdown:hover > .dropdown-menu {
+                display: block;
+            }
+            .navbar .nav-item.dropdown > .dropdown-toggle::after {
+                transition: transform 0.25s;
+            }
+            .navbar .nav-item.dropdown:hover > .dropdown-toggle::after {
+                transform: rotate(180deg);
+            }
+        }
+        .navbar .dropdown-item {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            padding: 7px 14px;
+            border-radius: 6px;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+        .navbar .dropdown-item:hover {
+            background: rgba(0,160,233,0.1);
+            color: var(--smx-blue);
+            transform: translateX(4px);
+        }
+        .navbar .dropdown-item:active {
+            background: var(--smx-blue);
+            color: white;
+        }
+        .dropdown-header-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--smx-cyan);
+            padding: 6px 14px 4px;
+            display: block;
+        }
+
+        /* HERO */
+        .hero-carousel {
+            background: url("richpeace.png") center/cover no-repeat;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-carousel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(0,102,153,0.85), rgba(0,160,233,0.75));
+        }
+        .hero-carousel .container { position: relative; z-index: 2; }
+        .hero-title { font-size: 4rem; font-weight: 700; }
+
+        /* INTRO STRIP */
+        .intro-strip { background: #28a745; border-bottom: 1px solid #eee; padding: 32px 0; }
+        .intro-item { border-right: 1px solid rgba(255,255,255,0.25); }
+        .intro-item:last-child { border-right: none; }
+        .intro-item i  { color: white; font-size: 1.6rem; margin-bottom: 8px; }
+        .intro-item h6 { font-weight: 700; font-size: 0.85rem; color: white; margin-bottom: 2px; }
+        .intro-item p  { font-size: 0.78rem; color: white; margin: 0; }
+
+        /* ABOUT */
+        .about-section { background: #f8f9fa; padding: 65px 0; }
+        .section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--smx-cyan); display: block; margin-bottom: 10px; }
+        .accent-bar { width: 50px; height: 4px; background: linear-gradient(90deg, var(--smx-blue), var(--smx-cyan)); border-radius: 2px; margin-bottom: 22px; }
+        .img-showcase { border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,102,153,0.13); position: relative; }
+        .img-showcase img { width: 100%; height: 340px; object-fit: cover; display: block; }
+        .img-overlay-badge { position: absolute; bottom: 20px; left: 20px; background: rgba(0,102,153,0.92); color: white; padding: 10px 18px; border-radius: 8px; font-size: 12px; font-weight: 700; }
+
+        /* FILTER BAR */
+        .filter-bar {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 18px 0;
+            position: sticky;
+            top: 88px;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .filter-btn {
+            border: 1.5px solid #ddd; background: white; color: #555;
+            border-radius: 50px; padding: 6px 18px; font-size: 13px;
+            font-weight: 600; cursor: pointer; transition: 0.25s;
+        }
+        .filter-btn:hover, .filter-btn.active { background: var(--smx-blue); color: white; border-color: var(--smx-blue); }
+        .results-count { font-size: 13px; color: #888; font-weight: 500; }
+
+        /* PRODUCT GRID */
+        .product-section { background: #f8f9fa; padding: 50px 0 70px; }
+        .product-card {
+            background: white; border-radius: 14px; border: 1.5px solid #eee;
+            padding: 0; overflow: hidden; height: 100%;
+            display: flex; flex-direction: column;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 45px rgba(0,102,153,0.13); border-color: var(--smx-cyan); }
+        .product-img-wrapper {
+            background: #f9fbfd; height: 220px;
+            display: flex; align-items: center; justify-content: center;
+            padding: 25px; position: relative; overflow: hidden;
+        }
+        .product-img-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s ease; }
+        .product-card:hover .product-img-wrapper img { transform: scale(1.07); }
+        .product-tag {
+            position: absolute; top: 12px; left: 12px;
+            background: var(--smx-cyan); color: white;
+            font-size: 10px; font-weight: 700; padding: 3px 10px;
+            border-radius: 50px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .product-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; border-top: 1px solid #f0f0f0; }
+        .product-body h3 { font-size: 14px; font-weight: 700; color: var(--smx-dark); margin-bottom: 6px; line-height: 1.4; }
+        .product-body p { font-size: 12px; color: #888; line-height: 1.6; margin-bottom: 14px; flex: 1; }
+        .btn-enquire {
+            background: transparent;
+            border: 2px solid #006699;
+            color: #006699;
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+        .btn-enquire:hover { background: #006699; color: #fff; }
+
+        /* WHY BANNER */
+        .why-banner { background: var(--smx-blue); padding: 70px 0; color: white; }
+        .why-icon { width: 65px; height: 65px; background: rgba(0,160,233,0.15); border: 1.5px solid rgba(0,160,233,0.3); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+        .why-icon i { color: white; font-size: 1.5rem; }
+        .why-card { padding: 30px 20px; border-right: 1px solid rgba(255,255,255,0.08); }
+        .why-card:last-child { border-right: none; }
+        .why-card h6 { font-weight: 700; font-size: 0.95rem; margin-bottom: 8px; }
+        .why-card p  { font-size: 0.82rem; opacity: 0.65; line-height: 1.7; margin: 0; }
+
+        /* FOOTER */
+        .main-footer { background: #0b1d2e; padding: 80px 0 20px; position: relative; color: white; }
+        .footer-heading { color: #ffffff; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; font-weight: 700; border-bottom: 2px solid var(--smx-cyan); display: inline-block; padding-bottom: 5px; }
+        .footer-links a { color: rgba(255,255,255,0.8); text-decoration: none; transition: 0.3s; display: block; margin-bottom: 10px; }
+        .footer-links a:hover { color: var(--smx-cyan); transform: translateX(5px); }
+        .footer-contact-info i { color: var(--smx-cyan); }
+        .main-footer .btn-outline-light { border-color: rgba(255,255,255,0.5); }
+        .main-footer .btn-outline-light:hover { background-color: var(--smx-green); border-color: var(--smx-green); }
+        .main-footer img { max-width: 100px; height: auto; }
+
+        /* Modal */
+        .modal-content { border: none; }
+        .table td { font-size: 0.9rem; padding: 6px 10px; }
+        .table tr:nth-child(even) { background: #f8f9fa; }
+        .btn-success { background: #5bb85b; border: none; }
+        .btn-smx-blue {
+            border: 2px solid #006699;
+            color: #006699;
+            background: transparent;
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+        .btn-smx-blue:hover { background: #006699; color: #fff; }
+
+        /* Section heading */
+        .section-heading { font-size: 1.6rem; font-weight: 700; color: var(--smx-dark); }
+        .section-sub { font-size: 0.88rem; color: #888; max-width: 600px; margin: 0 auto; }
+
+        /* Category badge colors */
+        .tag-template { background: #006699 !important; }
+        .tag-auto { background: #00a0e9 !important; }
+        .tag-cutting { background: #e07b00 !important; }
+        .tag-twin { background: #9b59b6 !important; }
+        .tag-bridge { background: #16a085 !important; }
+        .tag-360 { background: #c0392b !important; }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR WITH DROPDOWNS -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="smx.jpg" class="logo" alt="SMX India">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#smxNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="smxNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="silversun.html">Silversun</a></li>
+                <li class="nav-item"><a class="nav-link" href="cerliani.html">Cerliani</a></li>
+                <li class="nav-item"><a class="nav-link" href="juki.html">Juki</a></li>
+
+                <!-- Richpeace Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="richpeace.html" id="richpeaceDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                        Richpeace
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="richpeaceDropdown">
+                        <li><span class="dropdown-header-label">CNC Sewing for Garment</span></li>
+                        <li><a class="dropdown-item" href="#prod-laser"><i class="fa-solid fa-laser-pointer fa-xs me-2 text-primary"></i>Sewing &amp; Cutting (Laser)</a></li>
+                        <li><a class="dropdown-item" href="#prod-enhanced"><i class="fa-solid fa-arrows-up-down fa-xs me-2 text-primary"></i>Enhanced Large Size Sewing</a></li>
+                        <li><a class="dropdown-item" href="#prod-twin-color"><i class="fa-solid fa-palette fa-xs me-2 text-primary"></i>Twin Color Sewing Machine</a></li>
+                        <li><a class="dropdown-item" href="#prod-single-head"><i class="fa-solid fa-robot fa-xs me-2 text-primary"></i>Single Head Auto-Loader</a></li>
+                        <li><a class="dropdown-item" href="#prod-twin-pocket"><i class="fa-solid fa-square fa-xs me-2 text-primary"></i>Twin-color Pocket Setter</a></li>
+                        <li><a class="dropdown-item" href="#prod-bidir"><i class="fa-solid fa-arrows-left-right fa-xs me-2 text-primary"></i>Bidirectional Positive Stitch</a></li>
+                        <li><a class="dropdown-item" href="#prod-fixed-dual"><i class="fa-solid fa-screwdriver-wrench fa-xs me-2 text-primary"></i>Template Machine (Dual Lead)</a></li>
+                        <li><a class="dropdown-item" href="#prod-rotate-single"><i class="fa-solid fa-rotate fa-xs me-2 text-primary"></i>Template Machine (Rotating Head)</a></li>
+                        <li><a class="dropdown-item" href="#prod-auto-garment"><i class="fa-solid fa-industry fa-xs me-2 text-primary"></i>Auto Sewing for Garment</a></li>
+                        <li><a class="dropdown-item" href="#prod-360"><i class="fa-solid fa-circle-notch fa-xs me-2 text-primary"></i>360° Rotary Single Needle</a></li>
+                        <li><a class="dropdown-item" href="#prod-template"><i class="fa-solid fa-layer-group fa-xs me-2 text-primary"></i>Garment Template Sewing</a></li>
+                        <li><a class="dropdown-item" href="#prod-multihead"><i class="fa-solid fa-network-wired fa-xs me-2 text-primary"></i>Multi-head Bridge Type</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><span class="dropdown-header-label">More Products</span></li>
+                        <li><a class="dropdown-item" href="#prod-double-lead"><i class="fa-solid fa-gear fa-xs me-2 text-success"></i>Double-Lead-Screw Template</a></li>
+                        <li><a class="dropdown-item" href="#prod-circ-knife"><i class="fa-solid fa-scissors fa-xs me-2 text-success"></i>Sewing &amp; Cutting (Circular Knife)</a></li>
+                        <li><a class="dropdown-item" href="#prod-arm-type"><i class="fa-solid fa-hand fa-xs me-2 text-success"></i>Arm-Type Sewing (Light Material)</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <a href="#" class="btn btn-search"><i class="fa-solid fa-magnifying-glass me-2"></i>Search</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero-carousel">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h1 class="hero-title text-white mb-4">Richpeace CNC Sewing Machines</h1>
+                <p class="lead text-white opacity-75 mb-4">Complete range of CNC automatic sewing machines for garment manufacturing — template sewing, pocket setters, bidirectional stitch, laser cut-and-sew &amp; more</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip">
+    <div class="container">
+        <div class="row text-center g-3">
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="50">
+                <i class="fa-solid fa-microchip mb-2 d-block"></i>
+                <h6>Smart Automation</h6>
+                <p>AI-driven CNC sewing systems</p>
+            </div>
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-circle-check mb-2 d-block"></i>
+                <h6>ISO Certified</h6>
+                <p>International quality standard</p>
+            </div>
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="150">
+                <i class="fa-solid fa-truck-fast mb-2 d-block"></i>
+                <h6>Pan-India Delivery</h6>
+                <p>Fast &amp; safe shipping</p>
+            </div>
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-headset mb-2 d-block"></i>
+                <h6>AMC Support</h6>
+                <p>Certified service team</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="img-showcase">
+                    <img src="https://i.ytimg.com/vi/t9B6Ur03Hnw/maxresdefault.jpg"
+                         alt="Richpeace CNC Sewing"
+                         onerror="this.src='https://images.unsplash.com/photo-1581091870622-1c9e4f9acf6d?auto=format&fit=crop&w=700&q=80'">
+                    <div class="img-overlay-badge"><i class="fa-solid fa-gear me-2"></i>Production Ready</div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <span class="section-label">About Richpeace CNC Sewing</span>
+                <div class="accent-bar"></div>
+                <h2 class="fw-bold mb-4" style="font-size:2rem; color:var(--smx-dark);">Intelligent CNC Sewing for<br>Modern Garment Production</h2>
+                <p style="font-size:0.92rem; color:#666; line-height:1.8;" class="mb-3">
+                    Richpeace CNC sewing machines for garment production offer complete automation from template sewing and pocket setting to bidirectional stitch and integrated laser cutting. Each machine is engineered for precision, speed, and reduced labour costs across denim, shirt, suit, jacket, and fashion garment lines.
+                </p>
+                <p style="font-size:0.92rem; color:#666; line-height:1.8;" class="mb-4">
+                    SMX India is the authorised distributor of Richpeace machines in Mumbai and across India, offering the complete CNC sewing range with installation, training, and after-sales service.
+                </p>
+                <div class="d-flex gap-4 flex-wrap">
+                    <div><h4 class="fw-bold mb-0" style="color:var(--smx-blue);">15+</h4><small style="color:#888;">CNC Garment Models</small></div>
+                    <div><h4 class="fw-bold mb-0" style="color:var(--smx-blue);">30+</h4><small style="color:#888;">Years of R&amp;D</small></div>
+                    <div><h4 class="fw-bold mb-0" style="color:var(--smx-blue);">100+</h4><small style="color:#888;">Countries Served</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                <span style="font-size:13px;font-weight:700;color:#333;margin-right:6px;">Filter:</span>
+                <button class="filter-btn active" onclick="filterCards('all', this)">All Machines</button>
+                <button class="filter-btn" onclick="filterCards('template', this)">Template Sewing</button>
+                <button class="filter-btn" onclick="filterCards('auto', this)">Auto Sewing</button>
+                <button class="filter-btn" onclick="filterCards('twin', this)">Twin Color</button>
+                <button class="filter-btn" onclick="filterCards('cutting', this)">Cut &amp; Sew</button>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <span class="results-count" id="results-count">Showing 15 products</span>
+                <select class="form-select form-select-sm" style="width:170px;font-size:13px;border-radius:50px;">
+                    <option>Default Sorting</option>
+                    <option>Name A–Z</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PRODUCT GRID -->
+<section class="product-section">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-label">Richpeace CNC Sewing for Garment</span>
+            <h2 class="section-heading">Complete Product Range</h2>
+            <p class="section-sub mt-2">All 15 models from Richpeace's CNC Sewing for Garment category — sourced directly from the official product catalogue</p>
+        </div>
+        <div class="row g-4" id="product-grid">
+
+            <!-- P1: Automatic Sewing and Cutting (Laser) -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-laser" data-category="cutting" data-aos="fade-up" data-aos-delay="50">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag tag-cutting">Cut &amp; Sew</span>
+                        <img src="https://www.richpeace.com/uploadfile/202410/41df5aa33ba280b.jpg"
+                             alt="Automatic Sewing and Cutting Laser Machine"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Automatic Sewing and Cutting (Laser) Machine</h3>
+                        <p>Integrated sewing and laser cutting for down jackets, denim, shirts, suits, plackets, zippers, pockets and thin material garment parts.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal1"
+                            data-title="Richpeace Automatic Sewing and Cutting (Laser) Machine"
+                            data-img="https://www.richpeace.com/uploadfile/202410/41df5aa33ba280b.jpg"
+                            data-desc="Combines precision CNC sewing with integrated laser cutting for garment parts. Suitable for down jackets, denim, shirt, suit, fashion garments; handles plackets, zippers, pockets, shoulder loops and sleeve cuffs."
+                            data-brand="Richpeace" data-stitch="CNC Sewing + Laser Cutting"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-ASCL Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal1" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg1" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle1" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs1"></tbody></table>
+                            <p id="rpDesc1" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P2: Enhanced Large Size Sewing Machine (Light Material) -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-enhanced" data-category="auto" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag tag-auto">Auto Sewing</span>
+                        <img src="https://www.richpeace.com/uploadfile/202207/ca85bc10ea517cb.png"
+                             alt="Enhanced large size Sewing Machine Light Material"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Enhanced Large Size Sewing Machine (Light Material)</h3>
+                        <p>Large-format CNC sewing platform engineered for light garment materials. High-speed servo drive with expanded working area.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal2"
+                            data-title="Richpeace Enhanced Large Size Sewing Machine (Light Material)"
+                            data-img="https://www.richpeace.com/uploadfile/202207/ca85bc10ea517cb.png"
+                            data-desc="Designed for light materials such as shirts, blouses, and linings. Features an enhanced large sewing table with high-precision servo XY motion and automatic thread trimming."
+                            data-brand="Richpeace" data-stitch="CNC Sewing (Light Material)"
+                            data-length="Programmable" data-speed="High Speed"
+                            data-model="RP-ELS Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal2" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg2" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle2" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs2"></tbody></table>
+                            <p id="rpDesc2" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P3: Twin Color Sewing Machine -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-twin-color" data-category="twin" data-aos="fade-up" data-aos-delay="150">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag tag-twin">Twin Color</span>
+                        <img src="https://www.richpeace.com/uploadfile/202207/12c6c292355c9e2.png"
+                             alt="Twin Color Sewing Machine"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Twin Color Sewing Machine</h3>
+                        <p>Dual-thread color CNC sewing machine for decorative stitching and two-tone garment work. Automatic thread switching mechanism.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal3"
+                            data-title="Richpeace Twin Color Sewing Machine"
+                            data-img="https://www.richpeace.com/uploadfile/202207/12c6c292355c9e2.png"
+                            data-desc="CNC sewing machine capable of automatically switching between two thread colours for decorative or structural stitching on garments, accessories, and fashion items."
+                            data-brand="Richpeace" data-stitch="Twin-Color CNC Sewing"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-TC Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal3" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg3" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle3" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs3"></tbody></table>
+                            <p id="rpDesc3" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P4: Single Head Sewing Machine With Auto-Loader -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-single-head" data-category="auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag tag-auto">Auto Sewing</span>
+                        <img src="https://www.richpeace.com/uploadfile/202207/9c2ac0f065d08f9.png"
+                             alt="Single Head Sewing Machine With Auto-Loader"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Single Head Sewing Machine With Auto-Loader</h3>
+                        <p>Single-head CNC sewing machine equipped with an automatic material loading system for continuous, high-efficiency garment production.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal4"
+                            data-title="Richpeace Single Head Sewing Machine With Auto-Loader"
+                            data-img="https://www.richpeace.com/uploadfile/202207/9c2ac0f065d08f9.png"
+                            data-desc="Combines CNC sewing with an integrated automatic loader for material feeding, enabling non-stop garment part sewing without manual material placement."
+                            data-brand="Richpeace" data-stitch="CNC Sewing + Auto-Loader"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-SH-AL Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal4" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg4" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle4" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs4"></tbody></table>
+                            <p id="rpDesc4" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P5: Twin-color Pocket Setter -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-twin-pocket" data-category="twin" data-aos="fade-up" data-aos-delay="250">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag tag-twin">Twin Color</span>
+                        <img src="https://www.richpeace.com/uploadfile/thumb/c3e878e27f52e2a57ace4d9a76fd9acf/880x580_auto.jpg"
+                             alt="Twin-color Pocket Setter"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Twin-color Pocket Setter</h3>
+                        <p>Dedicated CNC pocket setting machine with dual-thread color support. Precision pocket attachment for shirts, trousers, and jackets.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal5"
+                            data-title="Richpeace Twin-color Pocket Setter"
+                            data-img="https://www.richpeace.com/uploadfile/thumb/c3e878e27f52e2a57ace4d9a76fd9acf/880x580_auto.jpg"
+                            data-desc="Automated pocket setter with two-tone thread capability, allowing decorative contrast stitching on pocket attachment. Suitable for shirts, trousers, casual and formal wear."
+                            data-brand="Richpeace" data-stitch="CNC Pocket Setter"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-TPS Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal5" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg5" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle5" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs5"></tbody></table>
+                            <p id="rpDesc5" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P6: Bidirectional Positive Stitch Sewing Machine -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-bidir" data-category="auto" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag tag-auto">Auto Sewing</span>
+                        <img src="https://www.richpeace.com/uploadfile/202105/90633a8c9a06e.png"
+                             alt="Bidirectional Positive Stitch Sewing Machine"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Bidirectional Positive Stitch Sewing Machine</h3>
+                        <p>Bidirectional positive stitch mechanism for even, consistent seams in both forward and reverse directions. Ideal for demanding garment sections.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal6"
+                            data-title="Richpeace Bidirectional Positive Stitch Sewing Machine"
+                            data-img="https://www.richpeace.com/uploadfile/202105/90633a8c9a06e.png"
+                            data-desc="CNC sewing with bidirectional positive stitch technology that ensures equal stitch quality in both directions. Reduces skipped stitches and improves seam integrity for high-stress garment sections."
+                            data-brand="Richpeace" data-stitch="Bidirectional Positive Stitch"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-BPS Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal6" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg6" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle6" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs6"></tbody></table>
+                            <p id="rpDesc6" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P7: Fixed Head Dual Lead Screws -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-fixed-dual" data-category="template" data-aos="fade-up" data-aos-delay="50">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Template</span>
+                        <img src="https://www.richpeace.cn/uploadfile/202412/b540bd845084c2c.png"
+                             alt="Garment Automatic Template Sewing Machine Fixed Head Dual Lead Screws"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Garment Template Sewing Machine (Fixed Head, Dual Lead Screws)</h3>
+                        <p>Fixed-head template sewing machine with dual lead-screw drive for high-precision, high-rigidity garment template operations.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal7"
+                            data-title="Richpeace Garment Automatic Template Sewing Machine (Fixed Head with Dual Lead Screws)"
+                            data-img="https://www.richpeace.cn/uploadfile/202412/b540bd845084c2c.png"
+                            data-desc="Fixed sewing head combined with dual lead screws for template-driven garment sewing. Delivers ultra-consistent seam paths for collar, cuff, pocket, and placket operations."
+                            data-brand="Richpeace" data-stitch="CNC Template Sewing"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-FH-DLS Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal7" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg7" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle7" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs7"></tbody></table>
+                            <p id="rpDesc7" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P8: Rotating Head Single Screw -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-rotate-single" data-category="template" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Template</span>
+                        <img src="https://www.richpeace.cn/uploadfile/202412/fba3ffca688a842.png"
+                             alt="Garment Automatic Template Sewing Machine Rotating Head Single Screw"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Garment Template Sewing Machine (Rotating Head, Single Screw)</h3>
+                        <p>Rotating sewing head with single-screw drive allows complex curve and angle sewing without repositioning the garment template.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal8"
+                            data-title="Richpeace Garment Automatic Template Sewing Machine (Rotating Head Single Screw)"
+                            data-img="https://www.richpeace.cn/uploadfile/202412/fba3ffca688a842.png"
+                            data-desc="The rotating head mechanism follows complex template paths with a single lead screw for flexibility. Ideal for collar, lapel, and irregular-shaped garment part sewing."
+                            data-brand="Richpeace" data-stitch="CNC Template Sewing (Rotating Head)"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-RH-SS Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal8" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg8" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle8" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs8"></tbody></table>
+                            <p id="rpDesc8" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P9: Auto Sewing Machine for Garment -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-auto-garment" data-category="auto" data-aos="fade-up" data-aos-delay="150">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag tag-auto">Auto Sewing</span>
+                        <img src="https://www.richpeace.com/uploadfile/202210/ffaafab9d679.png"
+                             alt="Richpeace Automatic Sewing Machine for Garment"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Richpeace Automatic Sewing Machine for Garment</h3>
+                        <p>General-purpose automatic CNC sewing machine for a wide range of garment parts. Programmable stitch paths via software or template.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal9"
+                            data-title="Richpeace Automatic Sewing Machine for Garment"
+                            data-img="https://www.richpeace.com/uploadfile/202210/ffaafab9d679.png"
+                            data-desc="Versatile CNC sewing platform for garment manufacturing with programmable stitch paths. Suitable for a broad range of garment components across light, medium, and denim fabric categories."
+                            data-brand="Richpeace" data-stitch="CNC Auto Sewing"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-ASG Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal9" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg9" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle9" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs9"></tbody></table>
+                            <p id="rpDesc9" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P10: 360° Rotary Single Needle -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-360" data-category="auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag tag-360">360° Rotary</span>
+                        <img src="https://www.richpeace.cn/uploadfile/202209/42341f107213466.png"
+                             alt="Richpeace Automatic 360 Rotary Single Needle Sewing Machine"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Automatic 360° Rotary Single Needle Sewing Machine (Vertical Hook – Garment)</h3>
+                        <p>Full 360-degree rotary needle head with vertical hook mechanism for garment applications — handles complex curves without rotating the material.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal10"
+                            data-title="Richpeace Automatic 360° Rotary Single Needle Sewing Machine (Vertical Hook-Garment)"
+                            data-img="https://www.richpeace.cn/uploadfile/202209/42341f107213466.png"
+                            data-desc="Single-needle machine with full 360° rotary needle mechanism and vertical hook. Eliminates the need to rotate garment fabric, enabling high-speed complex-curve sewing on any garment component."
+                            data-brand="Richpeace" data-stitch="360° Rotary Single Needle"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-360-VH Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal10" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg10" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle10" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs10"></tbody></table>
+                            <p id="rpDesc10" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P11: Garment Automatic Template Sewing Machine -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-template" data-category="template" data-aos="fade-up" data-aos-delay="250">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Template</span>
+                        <img src="https://www.richpeace.cn/uploadfile/202307/d5feb311d133c3d.png"
+                             alt="Richpeace Garment Automatic Template Sewing Machine"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Richpeace Garment Automatic Template Sewing Machine</h3>
+                        <p>Standard model garment automatic template sewing machine. Versatile CNC template sewing for collars, cuffs, pockets, and garment panels.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal11"
+                            data-title="Richpeace Garment Automatic Template Sewing Machine"
+                            data-img="https://www.richpeace.cn/uploadfile/202307/d5feb311d133c3d.png"
+                            data-desc="The standard Richpeace garment template sewing machine for collars, cuffs, pockets, and panels. Computer-controlled stitch path with template holder system for repeatable high-quality sewing."
+                            data-brand="Richpeace" data-stitch="CNC Template Sewing"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-GTSM Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal11" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg11" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle11" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs11"></tbody></table>
+                            <p id="rpDesc11" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P12: Multi-head Bridge Type Sewing Machine (Light Material) -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-multihead" data-category="auto" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag tag-bridge">Bridge Type</span>
+                        <img src="https://www.richpeace.com/uploadfile/202207/b514570ca6d1736.png"
+                             alt="Multi-head Bridge Type Sewing Machine Light Material"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Multi-head Bridge Type Sewing Machine (Light Material)</h3>
+                        <p>Bridge-frame multi-head CNC sewing machine for light material garments. Multiple heads work simultaneously for maximum output.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal12"
+                            data-title="Richpeace Multi-head Bridge Type Sewing Machine (Light Material)"
+                            data-img="https://www.richpeace.com/uploadfile/202207/b514570ca6d1736.png"
+                            data-desc="Bridge-style gantry frame CNC machine with multiple sewing heads working in parallel for light garment materials. Dramatically increases throughput for shirt, blouse, and lining production."
+                            data-brand="Richpeace" data-stitch="Multi-head CNC Sewing"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-MH-BT Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal12" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg12" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle12" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs12"></tbody></table>
+                            <p id="rpDesc12" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P13: Automatic Double-Lead-Screw Template Sewing Machine -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-double-lead" data-category="template" data-aos="fade-up" data-aos-delay="50">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Template</span>
+                        <img src="https://www.richpeace.cn/uploadfile/202304/e4287ffd51a9f07.png"
+                             alt="Richpeace Automatic Double-Lead-Screw Template Sewing Machine"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Automatic Double-Lead-Screw Template Sewing Machine</h3>
+                        <p>Enhanced template machine with independent double lead-screw mechanism for higher rigidity and stitch precision on demanding garment templates.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal13"
+                            data-title="Richpeace Automatic Double-Lead-Screw Template Sewing Machine"
+                            data-img="https://www.richpeace.cn/uploadfile/202304/e4287ffd51a9f07.png"
+                            data-desc="Double lead-screw design delivers superior rigidity and accuracy in XY template motion, producing highly consistent stitching even at maximum speed on complex garment templates."
+                            data-brand="Richpeace" data-stitch="CNC Template Sewing (Dual Lead)"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-DLS-TSM Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal13" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg13" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle13" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs13"></tbody></table>
+                            <p id="rpDesc13" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P14: Automatic Sewing and Cutting (Circular Knife) Machine -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-circ-knife" data-category="cutting" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag tag-cutting">Cut &amp; Sew</span>
+                        <img src="https://www.richpeace.com/uploadfile/202409/adf7352d1dc4d8e.jpg"
+                             alt="Richpeace Automatic Sewing and Cutting Circular Knife Machine"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Automatic Sewing and Cutting (Circular Knife) Machine</h3>
+                        <p>Integrated sewing and circular knife cutting for garments. Combines precise stitch placement with inline fabric cutting for garment part production.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal14"
+                            data-title="Richpeace Automatic Sewing and Cutting (Circular Knife) Machine"
+                            data-img="https://www.richpeace.com/uploadfile/202409/adf7352d1dc4d8e.jpg"
+                            data-desc="Combines CNC sewing with an integrated circular knife for clean fabric cutting alongside seam stitching. Reduces manual handling and improves accuracy for garment-part production."
+                            data-brand="Richpeace" data-stitch="CNC Sewing + Circular Knife Cutting"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-ASCK Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal14" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg14" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle14" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs14"></tbody></table>
+                            <p id="rpDesc14" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+            <!-- P15: Automatic Single Head Arm-Type Sewing Machine (Light Material) -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" id="prod-arm-type" data-category="auto" data-aos="fade-up" data-aos-delay="150">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag tag-auto">Auto Sewing</span>
+                        <img src="https://www.richpeace.com/uploadfile/202212/27efe579d02dd3f.png"
+                             alt="Richpeace Automatic Single Head Arm-Type Sewing Machine Light Material"
+                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/f0f6fa/006699?text=Richpeace+Machine'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Automatic Single Head Arm-Type Sewing Machine (Light Material)</h3>
+                        <p>Arm-frame single-head CNC sewing machine optimised for light garment materials. Compact arm design allows free fabric movement during sewing.</p>
+                        <a class="btn-enquire open-product"
+                            data-bs-toggle="modal" data-bs-target="#rpModal15"
+                            data-title="Richpeace Automatic Single Head Arm-Type Sewing Machine (Light Material)"
+                            data-img="https://www.richpeace.com/uploadfile/202212/27efe579d02dd3f.png"
+                            data-desc="Arm-type CNC frame enables free 360° fabric positioning for light material garments like blouses, linings, and light knitwear. Single head with high-precision servo for clean, consistent stitching."
+                            data-brand="Richpeace" data-stitch="CNC Arm-Type Sewing"
+                            data-length="Programmable" data-speed="High Speed Servo"
+                            data-model="RP-SH-AT Series" data-motor="Servo Motor" data-stock="Available on Order">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="rpModal15" tabindex="-1">
+                <div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden">
+                    <div class="modal-body p-4"><div class="row g-4">
+                        <div class="col-lg-6 text-center border-end"><img id="rpImg15" src="" class="img-fluid" style="max-height:350px;"></div>
+                        <div class="col-lg-6">
+                            <h4 id="rpTitle15" class="fw-bold mb-3"></h4>
+                            <table class="table table-sm"><tbody id="rpSpecs15"></tbody></table>
+                            <p id="rpDesc15" class="small text-muted"></p>
+                            <div class="border-top pt-3 mt-3"><h6 class="fw-bold mb-2">Send Enquiry</h6>
+                                <div class="row g-2">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name"></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number"></div>
+                                    <div class="col-12"><textarea class="form-control" rows="2" placeholder="Message"></textarea></div>
+                                    <div class="col-12 text-end"><button class="btn btn-success px-4">Send Enquiry</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                </div></div>
+            </div>
+
+        </div><!-- /row -->
+    </div>
+</section>
+
+<!-- WHY RICHPEACE -->
+<section class="why-banner">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-label" style="color:var(--smx-cyan);">The Richpeace Difference</span>
+            <h2 class="fw-bold" style="font-size:2rem;">Built for Industrial Performance</h2>
+        </div>
+        <div class="row g-0 text-center">
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-microchip"></i></div>
+                <h6>Smart Automation</h6>
+                <p>AI-assisted CNC sewing systems that reduce human error and increase throughput across every garment production shift.</p>
+            </div>
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-scissors"></i></div>
+                <h6>Precision Stitching</h6>
+                <p>Servo-driven XY motion achieves sub-millimetre stitch accuracy, eliminating manual positioning waste.</p>
+            </div>
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-layer-group"></i></div>
+                <h6>Full Garment Workflow</h6>
+                <p>From template sewing and pocket setting to laser cut-and-sew — Richpeace covers the complete CNC garment sewing process.</p>
+            </div>
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-earth-asia"></i></div>
+                <h6>Global Trust</h6>
+                <p>Over 30 years of R&amp;D with installations in 100+ countries — proven reliability in the most demanding environments.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <img src="smx1.png" alt="SMX India Logo" style="width:150px;">
+                <p class="opacity-75 mt-3">Leading the Indian market with premium industrial sewing and embroidery technology since 1994.</p>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://www.facebook.com/Smxindia/" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/smxindia" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=917506625436" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:smxindia15@gmail.com" class="btn btn-outline-light btn-sm rounded-circle"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.youtube.com/@smxindia" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/sewing-machine-exchange-india/" class="btn btn-outline-light btn-sm rounded-circle"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 footer-links">
+                <h6 class="footer-heading">Company</h6>
+                <a href="aboutus.html">About Us</a>
+                <a href="#">Our Brands</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="col-lg-6 footer-contact-info">
+                <h6 class="footer-heading">Support</h6>
+                <p class="mb-2"><i class="fa-solid fa-envelope me-2"></i>smxindia15@gmail.com</p>
+                <p class="mb-2"><i class="fa-solid fa-phone me-2"></i> 7506625436 / 9324613436</p>
+                <p class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>The Tarun Plastic Estate, Andheri East,<br> Mumbai, Maharashtra 400069</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+
+    // Close dropdown when a dropdown-item anchor is clicked (mobile + desktop)
+    document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var dropdownEl = document.getElementById('richpeaceDropdown');
+            var dropdown = bootstrap.Dropdown.getInstance(dropdownEl);
+            if (dropdown) dropdown.hide();
+        });
+    });
+
+    function filterCards(category, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const items = document.querySelectorAll('.product-item');
+        let count = 0;
+        items.forEach(item => {
+            const match = category === 'all' || item.dataset.category === category;
+            item.style.display = match ? '' : 'none';
+            if (match) count++;
+        });
+        document.getElementById('results-count').textContent = `Showing ${count} product${count !== 1 ? 's' : ''}`;
+    }
+
+    document.querySelectorAll('.open-product').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const target = this.dataset.bsTarget;
+            const idx = target.replace('#rpModal', '');
+            const imgEl   = document.getElementById('rpImg'   + idx);
+            const titleEl = document.getElementById('rpTitle' + idx);
+            const descEl  = document.getElementById('rpDesc'  + idx);
+            const specsEl = document.getElementById('rpSpecs' + idx);
+            if (imgEl)   imgEl.src         = this.dataset.img;
+            if (titleEl) titleEl.innerText  = this.dataset.title;
+            if (descEl)  descEl.innerText   = this.dataset.desc;
+            if (specsEl) specsEl.innerHTML  = `
+                <tr><td>Brand</td><td>${this.dataset.brand}</td></tr>
+                <tr><td>Machine Type</td><td>${this.dataset.stitch}</td></tr>
+                <tr><td>Max Stitch Length</td><td>${this.dataset.length}</td></tr>
+                <tr><td>Max Speed</td><td>${this.dataset.speed}</td></tr>
+                <tr><td>Model Number</td><td>${this.dataset.model}</td></tr>
+                <tr><td>Motor</td><td>${this.dataset.motor}</td></tr>
+                <tr><td>Availability</td><td>${this.dataset.stock}</td></tr>
+            `;
+        });
+    });
+
+    // Smooth scroll for dropdown anchor links
+    document.querySelectorAll('a[href^="#prod-"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                // Close dropdown first
+                var dropdownEl = document.getElementById('richpeaceDropdown');
+                var dropdown = bootstrap.Dropdown.getInstance(dropdownEl);
+                if (dropdown) dropdown.hide();
+                // Slight delay so dropdown closes before scroll
+                setTimeout(() => {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const card = target.querySelector('.product-card');
+                    if (card) {
+                        card.style.transition = 'box-shadow 0.3s';
+                        card.style.boxShadow = '0 0 0 3px var(--smx-cyan)';
+                        setTimeout(() => card.style.boxShadow = '', 2000);
+                    }
+                }, 150);
+            }
+        });
+    });
+</script>
+</body>
+</html>

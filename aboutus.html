@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SMX India – Industrial Sewing Excellence</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* =============================================
+           ROOT VARIABLES — copied exactly from index.html
+        ============================================= */
+        :root {
+            --smx-blue:   #006699;
+            --smx-cyan:   #00a0e9;
+            --smx-green:  #28a745;
+            --smx-dark:   #0b1d2e;
+            --glass-bg:   rgba(255, 255, 255, 0.95);
+        }
+
+        body { font-family: 'Montserrat', sans-serif; color: #444; overflow-x: hidden; }
+
+        /* =============================================
+           NAVBAR — exact copy from index.html
+        ============================================= */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+        .nav-link { font-weight: 600; color: var(--smx-blue) !important; transition: 0.3s; }
+        .nav-link:hover { color: var(--smx-cyan) !important; transform: translateY(-2px); }
+        .nav-link.active { color: var(--smx-cyan) !important; }
+
+        .btn-search {
+            border: 2px solid #006699;
+            color: #006699;
+            border-radius: 50px;
+            font-weight: bold;
+            padding: 5px 20px;
+            transition: 0.3s;
+        }
+        .btn-search:hover { background: #006699; color: white; }
+        .logo { height: 70px; }
+        
+
+        /* HERO SECTION */
+
+.hero-carousel{
+background:url("about.png") center/cover no-repeat;
+padding:120px 0;
+position:relative;
+overflow:hidden;
+}
+
+.hero-carousel::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+120deg,
+rgba(0,102,153,0.85),
+rgba(0,160,233,0.75)
+);
+}
+
+.hero-carousel .container{
+position:relative;
+z-index:2;
+}
+
+.hero-title{
+font-size:4rem;
+font-weight:700;
+}
+
+.machine-img{
+filter:drop-shadow(0 30px 50px rgba(0,0,0,0.3));
+animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+}
+
+        /* =============================================
+           WHO WE ARE
+        ============================================= */
+        .img-frame {
+            position: relative;
+            padding: 0 0 20px 20px;
+        }
+        .img-frame img {
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            width: 100%;
+        }
+        .img-frame::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 60%; height: 60%;
+            border-left: 5px solid var(--smx-cyan);
+            border-bottom: 5px solid var(--smx-cyan);
+            border-radius: 0 0 0 12px;
+            z-index: -1;
+        }
+        .badge-years {
+            position: absolute;
+            top: 20px; right: -10px;
+            background: var(--smx-blue);
+            color: white;
+            width: 110px; height: 110px;
+            border-radius: 50%;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,102,153,0.4);
+            font-family: 'Montserrat', sans-serif;
+        }
+        .badge-years span:first-child { font-size: 2rem; font-weight: 800; line-height: 1; }
+        .badge-years span:last-child  { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
+
+        .section-label {
+            font-size: 12px; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; color: var(--smx-cyan);
+            display: block; margin-bottom: 12px;
+        }
+        .accent-bar {
+            width: 50px; height: 4px;
+            background: linear-gradient(90deg, var(--smx-blue), var(--smx-cyan));
+            border-radius: 2px; margin-bottom: 25px;
+        }
+
+        /* =============================================
+           STATS COUNTER BAR
+        ============================================= */
+        .stats-bar {
+            background: #28a745;
+            padding: 60px 0;
+            color: white;
+        }
+        .stat-block { border-right: 1px solid rgba(255,255,255,0.2); }
+        .stat-block:last-child { border-right: none; }
+        .stat-block h3 { font-size: 3rem; font-weight: 800; margin-bottom: 5px; }
+        .stat-block p { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; opacity: 0.85; }
+
+        /* =============================================
+           PROCESS CARDS
+        ============================================= */
+        .process-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            border: 1px solid #eee;
+            border-bottom: 4px solid transparent;
+            transition: 0.4s;
+            height: 100%;
+        }
+        .process-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--smx-cyan);
+            box-shadow: 0 20px 40px rgba(0,102,153,0.12);
+        }
+        .process-num { font-size: 3.5rem; font-weight: 800; color: #f0f0f0; line-height: 1; }
+        .process-icon {
+            width: 55px; height: 55px;
+            background: linear-gradient(135deg, var(--smx-blue), var(--smx-cyan));
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 18px;
+        }
+        .process-icon i { color: white; font-size: 1.3rem; }
+
+        /* =============================================
+           WHY CHOOSE US (FEATURES)
+        ============================================= */
+        .why-section { background: #f8fafd; }
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid #eef2f7;
+            transition: 0.3s;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,102,153,0.1);
+        }
+        .feature-icon {
+            width: 70px; height: 70px;
+            background: linear-gradient(135deg, rgba(0,102,153,0.1), rgba(0,160,233,0.15));
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .feature-icon i { font-size: 1.6rem; color: var(--smx-blue); }
+
+        /* =============================================
+           TEAM SECTION
+        ============================================= */
+        .team-card { border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: 0.3s; background: white; }
+        .team-card:hover { transform: translateY(-8px); box-shadow: 0 20px 45px rgba(0,0,0,0.14); }
+        .team-img-wrap { position: relative; overflow: hidden; height: 260px; }
+        .team-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .team-card:hover .team-img-wrap img { transform: scale(1.05); }
+        .team-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(0deg, rgba(0,102,153,0.85) 0%, transparent 60%);
+            opacity: 0; transition: 0.3s;
+            display: flex; align-items: flex-end; justify-content: center; padding-bottom: 20px;
+        }
+        .team-card:hover .team-overlay { opacity: 1; }
+
+        /* =============================================
+           BRANDS SECTION
+        ============================================= */
+        .brand-logo-card {
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            padding: 25px;
+            text-align: center;
+            transition: 0.3s;
+            height: 110px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .brand-logo-card:hover { box-shadow: 0 10px 30px rgba(0,102,153,0.12); transform: translateY(-4px); }
+        .brand-logo-card img { max-height: 110px; width: auto; object-fit: contain; }
+
+        /* =============================================
+           TIMELINE
+        ============================================= */
+        .timeline { position: relative; padding-left: 50px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--smx-blue), var(--smx-cyan)); border-radius: 2px; }
+        .tl-item { position: relative; margin-bottom: 40px; }
+        .tl-dot {
+            position: absolute; left: -43px; top: 5px;
+            width: 18px; height: 18px; border-radius: 50%;
+            background: var(--smx-cyan); border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--smx-cyan);
+        }
+        .tl-year { font-size: 0.75rem; font-weight: 700; color: var(--smx-cyan); text-transform: uppercase; letter-spacing: 2px; }
+        .tl-title { font-size: 1.05rem; font-weight: 700; color: var(--smx-dark); }
+        .tl-text { font-size: 0.9rem; color: #666; line-height: 1.7; }
+
+        /* =============================================
+           FOOTER — exact copy from index.html
+        ============================================= */
+        .main-footer {
+            background: #0b1d2e;
+            padding: 80px 0 20px;
+            position: relative;
+            color: white;
+        }
+        .footer-heading {
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--smx-cyan);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: 0.3s;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .footer-links a:hover {
+            color: var(--smx-cyan);
+            transform: translateX(5px);
+        }
+        .footer-contact-info i { color: var(--smx-cyan); }
+        .main-footer .btn-outline-light { border-color: rgba(255,255,255,0.5); }
+        .main-footer .btn-outline-light:hover {
+            background-color: var(--smx-green);
+            border-color: var(--smx-green);
+        }
+    </style>
+</head>
+<body>
+
+<!-- =============================================
+     NAVBAR — exact from index.html
+============================================= -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="smx.jpg" class="logo" alt="SMX India">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#smxNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="smxNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="aboutus.html">About</a></li>
+                <!--<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="silversun.html" data-bs-toggle="dropdown">Silversun</a>
+                    <ul class="dropdown-menu shadow border-0">
+                        <li><a class="dropdown-item" href="#">S81 Series</a></li>
+                        <li><a class="dropdown-item" href="#">Lockstitch</a></li>
+                        <li><a class="dropdown-item" href="#">Overlock</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Juki</a>
+                    <ul class="dropdown-menu shadow border-0">
+                        <li><a class="dropdown-item" href="#">Industrial</a></li>
+                    </ul>
+                </li>-->
+                <li class="nav-item"><a class="nav-link" href="silversun.html">Silversun</a></li>
+                <li class="nav-item"><a class="nav-link" href="cerliani.html">Cerliani</a></li>
+                <li class="nav-item"><a class="nav-link" href="juki.html">Juki</a></li>
+                 <li class="nav-item"><a class="nav-link" href="richpeace.html">Richpeace</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <a href="#" class="btn btn-search"><i class="fa-solid fa-magnifying-glass me-2"></i>Search</a>
+        </div>
+    </div>
+</nav>
+
+<!-- =============================================
+     HERO
+============================================= -->
+<header class="hero-carousel">
+
+<div class="container">
+<div class="row align-items-center">
+
+<div class="col-lg-6" data-aos="fade-right">
+
+<h1 class="hero-title text-white mb-4">
+Our Legacy &amp; Story
+</h1>
+
+<p class="lead text-white opacity-75 mb-4">
+“Delivering Industrial Sewing Solutions Since 1994"
+</p>
+</div>
+</div>
+</div>
+</header>
+
+
+
+
+
+
+
+<!--<header class="about-hero">
+    <div class="container" data-aos="fade-up">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-3">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">About Us</li>
+            </ol>
+        </nav>
+        <h1 class="display-4 fw-800 mb-3" style="font-weight:800;">Our Legacy &amp; Story</h1>
+        <p class="lead mb-0 opacity-75">Building Industrial Excellence Since 1970</p>
+    </div>
+</header>-->
+
+<!-- =============================================
+     WHO WE ARE
+============================================= -->
+<section class="py-5 my-4">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <!-- Image -->
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="img-frame">
+                    <img src="about.jpeg"
+                         alt="SMX India Factory Floor">
+                    <div class="badge-years">
+                        <span>50+</span>
+                        <span>Years of<br>Expertise</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Text -->
+             <div class="col-lg-7" data-aos="fade-left">
+                <span class="section-label">About Us</span>
+                <h2 class="fw-bold mb-2" style="font-size:2.2rem;">Over 50 Years of Trusted Sewing Industry Expertise</h2>
+                <div class="accent-bar"></div>
+                <p class="mb-4 lh-lg">
+                    Founded in <strong>1994</strong>, <strong>Sewing Machine Exchange India (SMX India)</strong> has established itself as a trusted name in the industrial sewing machinery industry. Led by <strong>Mr. Santosh Agarwal</strong>, who brings over 50 years of deep industry expertise, we are committed to delivering reliable machinery, technical excellence, and complete sewing solutions to manufacturers across India.
+                </p>
+                <p class="mb-4 lh-lg">
+                    We are leading importers, exporters, and distributors of a wide range of industrial sewing machines, computerized embroidery systems, cutting and finishing equipment, quilting machines, and genuine spare parts. Our extensive product portfolio proudly caters to diverse industries including garments, knitwear, footwear, leather goods, jumbo bags, PPE kits, masks, and other industrial textile applications.
+                </p>
+                <p class="mb-4 lh-lg">
+                    Backed by decades of experience, profound technical knowledge, and dependable customer support, we continue to provide efficient, high-performance sewing solutions tailored precisely to the evolving needs of modern manufacturing domains.
+                </p>
+                <div class="row g-3 mt-2">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <div style="width:40px;height:40px;background:rgba(0,160,233,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fa-solid fa-globe" style="color:var(--smx-cyan);"></i>
+                            </div>
+                            <span class="fw-600" style="font-weight:600;font-size:.9rem;">Global Sourcing &amp; Imports</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <div style="width:40px;height:40px;background:rgba(0,160,233,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fa-solid fa-screwdriver-wrench" style="color:var(--smx-cyan);"></i>
+                            </div>
+                            <span class="fw-600" style="font-weight:600;font-size:.9rem;">Technical Support Excellence</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <div style="width:40px;height:40px;background:rgba(0,160,233,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fa-solid fa-award" style="color:var(--smx-cyan);"></i>
+                            </div>
+                            <span class="fw-600" style="font-weight:600;font-size:.9rem;">Complete Textile Solutions</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <div style="width:40px;height:40px;background:rgba(0,160,233,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fa-solid fa-handshake" style="color:var(--smx-cyan);"></i>
+                            </div>
+                            <span class="fw-600" style="font-weight:600;font-size:.9rem;">Pan India Distribution Network</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =============================================
+     WHY CHOOSE US
+============================================= -->
+<section class="why-section py-5">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-label">Our Strengths</span>
+            <h2 class="fw-bold" style="font-size:2rem;">Why Choose Us?</h2>
+            <div class="accent-bar mx-auto"></div>
+        </div>
+        <div class="row g-4">
+
+            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-medal"></i></div>
+                    <h6 class="fw-bold mb-2">50+ Years Experience</h6>
+                    <p class="small text-muted lh-lg">Trusted expertise in industrial sewing machinery since 1994.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <h6 class="fw-bold mb-2">Complete Sewing Solutions</h6>
+                    <p class="small text-muted lh-lg">Machines, automation, spare parts, and finishing equipment under one roof.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-earth-asia"></i></div>
+                    <h6 class="fw-bold mb-2">Global Sourcing Network</h6>
+                    <p class="small text-muted lh-lg">Quality machinery sourced from leading international manufacturers.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-user-gear"></i></div>
+                    <h6 class="fw-bold mb-2">Technical Expertise</h6>
+                    <p class="small text-muted lh-lg">Industry knowledge backed by decades of hands-on experience.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h6 class="fw-bold mb-2">Reliable After-Sales Support</h6>
+                    <p class="small text-muted lh-lg">Installation assistance, technical guidance, and spare parts support.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="350">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-industry"></i></div>
+                    <h6 class="fw-bold mb-2">Trusted Across Industries</h6>
+                    <p class="small text-muted lh-lg">Serving garments, leather, footwear, PPE, and industrial textile sectors.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- =============================================
+     MILESTONE TIMELINE
+============================================= -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5 align-items-start">
+            <div class="col-lg-5" data-aos="fade-right">
+                <span class="section-label">Our Journey</span>
+                <h2 class="fw-bold mb-3" style="font-size:2rem;">Key Milestones</h2>
+                <div class="accent-bar"></div>
+                <img src="timekey.jpeg"
+                     alt="Sewing machine close-up" class="img-fluid rounded-3 mt-3"
+                     style="box-shadow:0 15px 40px rgba(0,0,0,0.1);">
+            </div>
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="timeline mt-4">
+                    <div class="tl-item">
+                        <div class="tl-dot"></div>
+                        <!--<div class="tl-year">1970</div>-->
+                        <div class="tl-title">Founded on Industry Expertise</div>
+                        <div class="tl-text"> SMX India was established by Santosh Agarwal with a vision to provide reliable industrial sewing solutions backed by decades of technical knowledge.</div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot"></div>
+                        <!--<div class="tl-year">1985</div>-->
+                        <div class="tl-title">Global Brand Partnerships</div>
+                        <div class="tl-text"> Built strong partnerships with internationally recognized brands including JUKI, Richpeace, Silversun, JIN, and Cerliani. </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot"></div>
+                        <!--<div class="tl-year">2000</div>-->
+                        <div class="tl-title">Expanding Product Excellence</div>
+                        <div class="tl-text"> Over the years, we expanded our portfolio to include advanced sewing machines including computerized embroidery systems, quilting machines, cutting equipment, and finishing solutions. </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot"></div>
+                        <!--<div class="tl-year">2010</div>-->
+                        <div class="tl-title">Serving Diverse Industries</div>
+                        <div class="tl-text"> Successfully catering to garments, knitwear, leather, footwear, jumbo bags, PPE kits, and industrial textile manufacturers across India. </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot"></div>
+                        <!--<div class="tl-year">2024</div>-->
+                        <div class="tl-title">Advanced Technology Integration </div>
+                        <div class="tl-text">Introduced modern automation and computerized machinery solutions to help manufacturers improve productivity and efficiency.</div>
+
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot"></div>
+                       <!-- <div class="tl-year">2026</div>-->
+                        <div class="tl-title">Trusted Globally </div>
+                        <div class="tl-text">Today, SMX India continues to serve businesses worldwide with dependable machinery, technical expertise, and long-term customer support.</div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =============================================
+     WORK PROCESS
+============================================= -->
+<section class="py-5 my-2">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-label">How We Work</span>
+            <h2 class="fw-bold" style="font-size:2rem;">Our Approach</h2>
+            <div class="accent-bar mx-auto"></div>
+        </div>
+        <div class="row g-4">
+    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="process-card">
+            <div class="process-num">01</div>
+            <div class="process-icon mt-3">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+            <h5 class="fw-bold">Requirement Analysis</h5>
+            <p class="small text-muted lh-lg">We understand your production needs and recommend the most suitable sewing solutions.</p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="process-card">
+            <div class="process-num">02</div>
+            <div class="process-icon mt-3">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+            <h5 class="fw-bold">Consultation</h5>
+            <p class="small text-muted lh-lg">Our experts help select the right machines, attachments, and automation systems.</p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="process-card">
+            <div class="process-num">03</div>
+            <div class="process-icon mt-3">
+                <i class="fa-solid fa-boxes-packing"></i>
+            </div>
+            <h5 class="fw-bold">Quality Sourcing</h5>
+            <p class="small text-muted lh-lg">We source reliable machinery and components from trusted global manufacturers.</p>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="process-card">
+            <div class="process-num">04</div>
+            <div class="process-icon mt-3">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+            </div>
+            <h5 class="fw-bold">Delivery &amp; Support</h5>
+            <p class="small text-muted lh-lg">We provide installation, technical assistance, and genuine spare parts support.</p>
+        </div>
+    </div>
+</div>
+    </div>
+</section>
+<section class="machines-section py-5">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-label">Our Product Range</span>
+            <h2 class="fw-bold" style="font-size:2rem;">Types of Machines</h2>
+            <div class="accent-bar mx-auto"></div>
+            <p class="text-muted mt-2">Industrial sewing solutions for every production requirement</p>
+        </div>
+
+        <div class="text-center mb-4" data-aos="fade-up">
+            <ul class="nav justify-content-center machine-type-tabs" id="machineTab">
+                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab-all">All</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-stitch">Stitch</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-embroidery">Embroidery</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-cutting">Cutting</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-special">Special Purpose</a></li>
+            </ul>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="tab-all">
+                <div class="row g-4">
+
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="lockstich.svg" alt="Industrial Lockstitch Machine">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Stitch</span>
+                                <h5>Lockstitch Machine</h5>
+                                <p>The most widely used machine in garment production, delivering a tight, secure stitch ideal for seaming all types of fabrics.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> High-speed up to 5,500 SPM</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Suitable for light to heavy fabrics</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Auto thread trimmer</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="overlock.svg" alt="Industrial Overlock Serger Machine">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Stitch</span>
+                                <h5>Overlock </h5>
+                                <p>Trims, encloses, and stitches seam allowances simultaneously to prevent fraying — essential for knitwear and readymade garments.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> 3/4/5-thread variants</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Differential feed for stretch fabrics</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Up to 8,000 SPM</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="interlock.svg" alt="Flatlock Interlock Stitching">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Stitch</span>
+                                <h5>Flatlock / Interlock</h5>
+                                <p>Produces flat, smooth seams with excellent stretch — widely used in sportswear, innerwear, and activewear manufacturing.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Flat seam with no ridge</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Ideal for jersey & knit fabrics</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> 2–4 needle configurations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="computerize.svg" alt="Multi-Head Computerized Embroidery Machine">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Embroidery</span>
+                                <h5>Computerised Embroidery</h5>
+                                <p>Multi-head computerised embroidery machines for logo, monogram, and decorative stitch patterns on garments and accessories.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> 6 to 20-head configurations</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> 9 to 15 needle per head</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> USB design import</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="cadcam.svg" alt="Automated CNC Fabric Cutter">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Cutting</span>
+                                <h5>CAD/CAM Automatic Cutter</h5>
+                                <p>Precision automated fabric cutting systems with Richpeace technology — dramatically reducing fabric waste and cutting time.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Multi-layer cutting up to 100 plies</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Auto marker planning</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Fabric up to 200gsm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="350">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="button.png" alt="Industrial Button Attaching Machine">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Special Purpose</span>
+                                <h5>Button Sewing Machine</h5>
+                                <p>Automated button attaching and button-holing machines for shirts, trousers, and formal wear production lines.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> 2-hole &amp; 4-hole buttons</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Auto thread cut &amp; sew</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Adjustable stitch count</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="bartrack.svg" alt="Heavy Duty Bartack Sewing Machine">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Special Purpose</span>
+                                <h5>Bartack Machine</h5>
+                                <p>Reinforces stress points on garments such as belt loops, pocket corners, and zipper ends for extra durability.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Up to 3,200 RPM</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Programmable stitch patterns</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Memory for 50+ programs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="450">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="chain.svg" alt="Denim Heavy Chainstitch Assembly">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Stitch</span>
+                                <h5>Chainstitch Machine</h5>
+                                <p>Single-needle chainstitch for denim, bags, and heavy fabrics — produces a durable, elastic seam loved in denim manufacturing.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Heavy-duty needle bar</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Ideal for denim &amp; canvas</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> High-speed bobbin-free operation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="heat.svg" alt="Industrial Textile Steam Fusing Press">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Special Purpose</span>
+                                <h5>Fusing / Heat Press Machine</h5>
+                                <p>Bonds interlining to fabric using controlled heat and pressure — critical for formal shirts, suits, and structured garments.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Continuous belt fusing</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Adjustable temp &amp; pressure</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Uniform bond quality</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab-stitch">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="lockstich.svg" alt="Lockstitch Machine">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Stitch</span>
+                                <h5>Lockstitch Machine</h5>
+                                <p>The most widely used machine in garment production, delivering a tight, secure stitch ideal for seaming all types of fabrics.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> High-speed up to 5,500 SPM</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Suitable for light to heavy fabrics</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Auto thread trimmer</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="overlock.svg" alt="Overlock Machine">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Stitch</span>
+                                <h5>Overlock </h5>
+                                <p>Trims, encloses, and stitches seam allowances simultaneously — essential for knitwear and readymade garments.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> 3/4/5-thread variants</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Differential feed for stretch fabrics</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Up to 8,000 SPM</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="interlock.svg" alt="Flatlock Machine">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Stitch</span>
+                                <h5>Flatlock / Interlock</h5>
+                                <p>Produces flat, smooth seams with excellent stretch — widely used in sportswear, innerwear, and activewear.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Flat seam with no ridge</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Ideal for jersey &amp; knit fabrics</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> 2–4 needle configurations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="chain.svg" alt="Chainstitch Machine">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Stitch</span>
+                                <h5>Chainstitch Machine</h5>
+                                <p>Single-needle chainstitch for denim, bags, and heavy fabrics — produces a durable, elastic seam.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Heavy-duty needle bar</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Ideal for denim &amp; canvas</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Bobbin-free operation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab-embroidery">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="computerize.svg" alt="Embroidery Machine">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Embroidery</span>
+                                <h5>Computerised Embroidery</h5>
+                                <p>Multi-head computerised embroidery machines for logo, monogram, and decorative stitch patterns.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> 6 to 20-head configurations</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> 9 to 15 needle per head</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> USB design import</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab-cutting">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="cadcam.svg" alt="CAD CAM Cutting">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Cutting</span>
+                                <h5>CAD/CAM Automatic Cutter</h5>
+                                <p>Precision automated fabric cutting systems — dramatically reducing fabric waste and cutting time.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Multi-layer cutting up to 100 plies</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Auto marker planning</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Fabric up to 200gsm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="tab-special">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="button.png" alt="Button Sewing">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Special Purpose</span>
+                                <h5>Button Sewing Machine</h5>
+                                <p>Automated button attaching and button-holing machines for shirts, trousers, and formal wear.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> 2-hole &amp; 4-hole buttons</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Auto thread cut &amp; sew</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Adjustable stitch count</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="bartrack.svg" alt="Bartack">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Special Purpose</span>
+                                <h5>Bartack Machine</h5>
+                                <p>Reinforces stress points on garments such as belt loops, pocket corners, and zipper ends.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Up to 3,200 RPM</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Programmable stitch patterns</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Memory for 50+ programs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="machine-type-card">
+                            <div class="machine-img-wrap">
+                                <img src="heat.svg" alt="Fusing">
+                            </div>
+                            <div class="card-body">
+                                <span class="machine-badge">Special Purpose</span>
+                                <h5>Fusing / Heat Press Machine</h5>
+                                <p>Bonds interlining to fabric using controlled heat and pressure — critical for formal shirts, suits, and structured garments.</p>
+                                <ul class="machine-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Continuous belt fusing</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Adjustable temp &amp; pressure</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Uniform bond quality</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section><!-- =============================================
+     STATS BAR
+============================================= -->
+<section class="stats-bar py-5">
+    <div class="container">
+        <div class="row text-center g-4 justify-content-center">
+
+            <!-- Stat 1 -->
+            <div class="col-12 col-md-3 stat-block" data-aos="fade-up">
+                <h3>50+</h3>
+                <p>Years in Business</p>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="col-12 col-md-3 stat-block" data-aos="fade-up" data-aos-delay="150">
+                <h3>25+</h3>
+                <p>Expert Employees</p>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="col-12 col-md-3 stat-block" data-aos="fade-up" data-aos-delay="300">
+                <h3>98%</h3>
+                <p>Client Satisfaction</p>
+            </div>
+             <!-- Stat 4 -->
+              <div class="col-12 col-md-3 stat-block" data-aos="fade-up" data-aos-delay="300">
+                <h3>1000+</h3>
+                <p>Machines Delivered and Installed</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- =============================================
+     OUR MISSION VISION IMAGE SECTION
+============================================= 
+<section class="py-5 bg-light">
+    <div class="container py-3">
+        <div class="row g-5 align-items-center">-->
+            <!-- Text left
+            <div class="col-lg-6" data-aos="fade-right">
+                <span class="section-label">Our Purpose</span>
+                <h2 class="fw-bold mb-3" style="font-size:2rem;">Mission &amp; Vision</h2>
+                <div class="accent-bar"></div>
+
+                <div class="mb-4 p-4 rounded-3" style="border-left:4px solid var(--smx-blue);background:white;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+                    <h5 class="fw-bold mb-2" style="color:var(--smx-blue);"><i class="fa-solid fa-bullseye me-2"></i>Our Mission</h5>
+<p class="mb-0 lh-lg" style="font-size:.95rem;">
+To empower the garment industry with advanced, reliable, and efficient sewing technology, delivering consistent quality, productivity, and long-term value to our customers.
+</p>                </div>
+
+                <div class="p-4 rounded-3" style="border-left:4px solid var(--smx-cyan);background:white;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+                    <h5 class="fw-bold mb-2" style="color:var(--smx-cyan);"><i class="fa-solid fa-eye me-2"></i>Our Vision</h5>
+                    <p class="mb-0 lh-lg" style="font-size:.95rem;">To be India's most trusted industrial sewing machinery partner by continuously innovating, expanding our brand portfolio, and delivering unmatched after-sales support.</p>
+                </div>
+            </div> -->
+            <!-- Image right
+            <div class="col-lg-6" data-aos="fade-left">
+                <div style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,0.12);">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80"
+                         alt="Industrial Sewing Workshop" class="img-fluid w-100" style="height:380px;object-fit:cover;">
+                    <div style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(0,102,153,0.3),transparent);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+
+
+
+
+
+<!-- =============================================
+     OUR BRANDS
+============================================= -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-label">Partnerships</span>
+            <h2 class="fw-bold" style="font-size:2rem;">Our Premium Brands</h2>
+            <div class="accent-bar mx-auto"></div>
+            <p class="text-muted mt-2">Partnering with world leaders in sewing technology since 1970</p>
+        </div>
+        <div class="row g-3 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100">
+                <div class="brand-logo-card">
+                    <img src="brand_silversun.jpg" alt="Silversun"
+                         onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-weight:700;color:#006699;font-size:1.1rem;\'>SILVERSUN</span>';">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="150">
+                <div class="brand-logo-card">
+                    <img src="brand_juki.jpg" alt="Juki"
+                         onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-weight:700;color:#006699;font-size:1.1rem;\'>JUKI</span>';">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200">
+                <div class="brand-logo-card">
+                    <img src="brand_mce.jpg" alt="Cerliani"
+                         onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-weight:700;color:#006699;font-size:1.1rem;\'>CERLIANI</span>';">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="250">
+                <div class="brand-logo-card">
+                    <img src="brand_richpeace.jpg" alt="Richpeace"
+                         onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-weight:700;color:#006699;font-size:1.1rem;\'>RICHPEACE</span>';">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
+                <div class="brand-logo-card">
+                    <img src="jin.svg" alt="JIN"
+                         onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-weight:700;color:#006699;font-size:1.1rem;\'>JIN</span>';">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============================================
+     CONTACT CTA
+============================================= 
+<section style="background:#28a745;padding:70px 0;color:white;">
+    <div class="container text-center" data-aos="zoom-in">
+        <h2 class="fw-bold mb-3" style="font-size:2rem;">Ready to Upgrade Your Production?</h2>
+        <p class="lead opacity-75 mb-4">Talk to our experts and find the perfect sewing solution for your business.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="tel:7506625436" class="btn btn-light btn-lg px-5 rounded-pill fw-bold" style="color:#28a745;">
+                <i class="fa-solid fa-phone me-2"></i>Call Now
+            </a>
+            <a href="mailto:Smxindia15@gmail.com" class="btn btn-outline-light btn-lg px-5 rounded-pill fw-bold">
+                <i class="fa-solid fa-envelope me-2"></i>Email Us
+            </a>
+        </div>
+    </div>
+</section>-->
+
+<!-- =============================================
+     FOOTER — exact copy from index.html
+============================================= -->
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div class="row g-5">
+            
+            <div class="col-lg-4 ">
+                <!-- Logo Instead of Text -->
+                <img src="smx1.png" alt="SMX India Logo" style="width:150px; ">
+
+                <p class="opacity-75 mt-3">
+                    Leading the Indian market with premium industrial sewing and embroidery technology since 1994.
+                </p>
+
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://www.facebook.com/Smxindia/" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/smxindia" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=917506625436" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="smxindia15@gmail.com" class="btn btn-outline-light btn-sm rounded-circle">
+                       <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@smxindia" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/sewing-machine-exchange-india/" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 footer-links">
+                <h6 class="footer-heading">Company</h6>
+                <a href="#">About Us</a>
+                <a href="#brands">Our Brands</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="col-lg-6 footer-contact-info">
+                <h6 class="footer-heading">Support</h6>
+                <p class="mb-2"><i class="fa-solid fa-envelope me-2"></i>smxindia15@gmail.com</p>
+                <p class="mb-2"><i class="fa-solid fa-phone me-2"></i> 7506625436 / 9324613436</p>
+                <p class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>
+                    The Tarun Plastic Estate, Andheri East,<br> Mumbai, Maharashtra 400069
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<style>
+    .main-footer img {
+    max-width: 100px;
+    height: auto;
+}
+
+        /* =============================================
+           MACHINE TYPES SECTION
+        ============================================= */
+        .machine-type-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+            border: 1px solid #eef2f7;
+            transition: 0.4s;
+            height: 100%;
+        }
+        .machine-type-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,102,153,0.15);
+        }
+        .machine-img-wrap {
+            overflow: hidden;
+            position: relative;
+            height: 200px;
+        }
+        .machine-img-wrap img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        .machine-type-card:hover .machine-img-wrap img { transform: scale(1.06); }
+        .machine-img-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,102,153,0.18) 100%);
+        }
+        .machine-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--smx-blue), var(--smx-cyan));
+            color: white;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+        .machine-type-card .card-body { padding: 22px; }
+        .machine-type-card h5 { font-size: 1rem; font-weight: 700; color: var(--smx-dark); margin-bottom: 8px; }
+        .machine-type-card p { font-size: 0.875rem; color: #666; line-height: 1.7; margin-bottom: 12px; }
+        .machine-features { list-style: none; padding: 0; margin: 0; }
+        .machine-features li { font-size: 0.8rem; color: #555; padding: 3px 0; }
+        .machine-features li i { color: var(--smx-cyan); margin-right: 6px; font-size: 0.72rem; }
+        .machines-section { background: #f8fafd; }
+        .machine-type-tabs .nav-link {
+            border-radius: 50px !important;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--smx-blue);
+            padding: 8px 22px;
+            border: 2px solid #dee2e6 !important;
+            margin: 4px;
+            transition: 0.3s;
+        }
+        .machine-type-tabs .nav-link.active,
+        .machine-type-tabs .nav-link:hover {
+            background: linear-gradient(135deg, var(--smx-blue), var(--smx-cyan)) !important;
+            color: white !important;
+            border-color: transparent !important;
+        }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic' });
+</script>
+</body>
+</html>

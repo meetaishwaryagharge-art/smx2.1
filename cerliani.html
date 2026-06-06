@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerliani Hooks & Bobbin Cases | SMX India</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* =============================================
+           ROOT — copied exactly from index.html
+        ============================================= */
+        :root {
+            --smx-blue:  #006699;
+            --smx-cyan:  #00a0e9;
+            --smx-green: #28a745;
+            --smx-dark:  #0b1d2e;
+            --glass-bg:  rgba(255, 255, 255, 0.95);
+        }
+
+        body { font-family: 'Montserrat', sans-serif; color: #444; overflow-x: hidden; background: #fcfcfc; }
+
+        /* =============================================
+           NAVBAR — exact from index.html
+        ============================================= */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 0;
+            transition: all 0.4s ease;
+        }
+        .nav-link { font-weight: 600; color: var(--smx-blue) !important; transition: 0.3s; }
+        .nav-link:hover { color: var(--smx-cyan) !important; transform: translateY(-2px); }
+        .nav-link.active { color: var(--smx-cyan) !important; }
+        .btn-search {
+            border: 2px solid #006699;
+            color: #006699;
+            border-radius: 50px;
+            font-weight: bold;
+            padding: 5px 20px;
+            transition: 0.3s;
+        }
+        .btn-search:hover { background: #006699; color: white; }
+        .logo { height: 70px; }
+
+
+  /* HERO SECTION */
+
+.hero-carousel{
+background:url("cerliani.png") center/cover no-repeat;
+padding:120px 0;
+position:relative;
+overflow:hidden;
+}
+
+.hero-carousel::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+120deg,
+rgba(0,102,153,0.85),
+rgba(0,160,233,0.75)
+);
+}
+
+.hero-carousel .container{
+position:relative;
+z-index:2;
+}
+
+.hero-title{
+font-size:4rem;
+font-weight:700;
+}
+
+.machine-img{
+filter:drop-shadow(0 30px 50px rgba(0,0,0,0.3));
+animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-20px)}
+}
+
+
+        /* =============================================
+           PAGE HERO
+        =============================================
+        .page-hero {
+            background: linear-gradient(120deg, rgba(0,102,153,0.91), rgba(0,160,233,0.83)),
+                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding: 80px 0 65px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; left: 0; right: 0;
+            height: 55px;
+            background: #f8f9fa;
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+        .breadcrumb-item a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        .breadcrumb-item a:hover { color: white; }
+        .breadcrumb-item.active { color: rgba(255,255,255,0.6); }
+        .breadcrumb-item + .breadcrumb-item::before { color: rgba(255,255,255,0.4); }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            backdrop-filter: blur(6px);
+            border-radius: 50px;
+            padding: 10px 24px 10px 14px;
+            margin-bottom: 22px;
+        }
+        .brand-badge-dot {
+            width: 38px; height: 38px;
+            background: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .brand-badge-dot i { color: var(--smx-blue); font-size: 1.1rem; }
+        .brand-badge span { font-weight: 700; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; } */
+
+        /* =============================================
+           INTRO STRIP
+        ============================================= */
+        .intro-strip { background:#28a745; border-bottom: 1px solid #eee; padding: 32px 0; }
+        .intro-item { border-right: 1px solid #eee; }
+        .intro-item:last-child { border-right: none; }
+        .intro-item i { color: white; font-size: 1.6rem; margin-bottom: 8px; }
+        .intro-item h6 { font-weight: 700; font-size: 0.85rem; color: white; margin-bottom: 2px; }
+        .intro-item p { font-size: 0.78rem; color: white; margin: 0; }
+
+        /* =============================================
+           ABOUT CERLIANI
+        ============================================= */
+        .about-cerliani { background: #f8f9fa; padding: 65px 0; }
+        .section-label {
+            font-size: 11px; font-weight: 700; letter-spacing: 3px;
+            text-transform: uppercase; color: var(--smx-cyan);
+            display: block; margin-bottom: 10px;
+        }
+        .accent-bar {
+            width: 50px; height: 4px;
+            background: linear-gradient(90deg, var(--smx-blue), var(--smx-cyan));
+            border-radius: 2px; margin-bottom: 22px;
+        }
+        .img-showcase { border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,102,153,0.13); position: relative; }
+        .img-showcase img { width: 100%; height: 340px; object-fit: cover; display: block; }
+        .img-overlay-badge {
+            position: absolute; bottom: 20px; left: 20px;
+            background: rgba(0,102,153,0.92); color: white;
+            padding: 10px 18px; border-radius: 8px;
+            font-size: 12px; font-weight: 700;
+        }
+
+        /* =============================================
+           FILTER BAR
+        ============================================= */
+        .filter-bar {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 16px 0;
+            position: sticky; top: 88px; z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+        .filter-btn {
+            border: 1.5px solid #ddd; background: white; color: #555;
+            border-radius: 50px; padding: 6px 18px;
+            font-size: 12px; font-weight: 600; cursor: pointer;
+            transition: 0.25s; font-family: 'Montserrat', sans-serif;
+        }
+        .filter-btn:hover, .filter-btn.active { background: var(--smx-blue); color: white; border-color: var(--smx-blue); }
+        .results-count { font-size: 13px; color: #888; font-weight: 500; }
+
+        /* =============================================
+           PRODUCT GRID
+        ============================================= */
+        .product-section { background: #f4f6f9; padding: 55px 0 75px; }
+
+        .product-card {
+            background: white; border-radius: 16px;
+            border: 1.5px solid #eee; overflow: hidden;
+            height: 100%; display: flex; flex-direction: column;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 22px 50px rgba(0,102,153,0.13);
+            border-color: var(--smx-cyan);
+        }
+        .product-img-wrap {
+            background: #f9fbfd; height: 210px;
+            display: flex; align-items: center; justify-content: center;
+            padding: 28px; position: relative; overflow: hidden;
+        }
+        .product-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s; }
+        .product-card:hover .product-img-wrap img { transform: scale(1.08); }
+
+        .prod-tag {
+            position: absolute; top: 12px; left: 12px;
+            background: var(--smx-cyan); color: white;
+            font-size: 10px; font-weight: 700;
+            padding: 3px 10px; border-radius: 50px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .prod-tag.rotary  { background: #c0392b; }
+        .prod-tag.heavy   { background: #e07b00; }
+        .prod-tag.coated  { background: #7b2fbe; }
+
+        .product-body {
+            padding: 18px 20px 22px; flex: 1;
+            display: flex; flex-direction: column;
+            border-top: 1px solid #f0f0f0;
+        }
+        .product-body h3 { font-size: 14px; font-weight: 700; color: var(--smx-dark); margin-bottom: 7px; line-height: 1.45; }
+        .product-body p { font-size: 12px; color: #888; line-height: 1.65; flex: 1; margin-bottom: 16px; }
+        .btn-enquire {
+            background: transparent; border: 1.5px solid var(--smx-blue);
+            color: var(--smx-blue); font-size: 12px; font-weight: 700;
+            border-radius: 50px; padding: 7px 18px; transition: 0.3s;
+            text-decoration: none; display: inline-block; align-self: flex-start;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .btn-enquire:hover { background: var(--smx-blue); color: white; }
+
+        /* =============================================
+           WHY CERLIANI DARK BANNER
+        ============================================= */
+        .why-banner { background: var(--smx-blue) ; padding: 70px 0; color: white; }
+        .why-icon {
+            width: 65px; height: 65px;
+            background: rgba(0,160,233,0.15);
+            border: 1.5px solid rgba(0,160,233,0.3);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 18px;
+        }
+        .why-icon i { color:white; font-size: 1.5rem; }
+        .why-card { padding: 30px 20px; border-right: 1px solid rgba(255,255,255,0.08); }
+        .why-card:last-child { border-right: none; }
+        .why-card h6 { font-weight: 700; font-size: 0.95rem; margin-bottom: 8px; }
+        .why-card p { font-size: 0.82rem; opacity: 0.65; line-height: 1.7; margin: 0; }
+
+        /* =============================================
+           FEATURES STRIP — green (exact index.html)
+        ============================================= */
+        .features-strip { background: var(--smx-green); padding: 45px 0; color: white; }
+        .fstrip-item { border-right: 1px solid rgba(255,255,255,0.2); }
+        .fstrip-item:last-child { border-right: none; }
+        .fstrip-icon {
+            width: 58px; height: 58px;
+            background: rgba(255,255,255,0.15); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 13px; font-size: 1.3rem;
+        }
+
+        /* =============================================
+           CTA SECTION
+        ============================================= 
+        .cta-section {
+            background: var(--smx-green);
+            padding: 65px 0; color: white;
+        }*/
+
+        /* =============================================
+           FOOTER — exact from index.html
+        ============================================= */
+        .main-footer {
+            background: #0b1d2e;
+            padding: 80px 0 20px;
+            position: relative;
+            color: white;
+        }
+        .footer-heading {
+            color: #ffffff;
+            text-transform: uppercase; letter-spacing: 2px;
+            margin-bottom: 30px; font-weight: 700;
+            border-bottom: 2px solid var(--smx-cyan);
+            display: inline-block; padding-bottom: 5px;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none; transition: 0.3s;
+            display: block; margin-bottom: 10px;
+        }
+        .footer-links a:hover { color: var(--smx-cyan); transform: translateX(5px); }
+        .footer-contact-info i { color: var(--smx-cyan); }
+        .main-footer .btn-outline-light { border-color: rgba(255,255,255,0.5); }
+        .main-footer .btn-outline-light:hover { background-color: var(--smx-green); border-color: var(--smx-green); }
+    </style>
+</head>
+<body>
+
+<!-- =============================================
+     NAVBAR — exact from index.html
+============================================= -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="smx.jpg" class="logo" alt="SMX India">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#smxNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="smxNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+              <!--  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Silversun</a>
+                    <ul class="dropdown-menu shadow border-0">
+                        <li><a class="dropdown-item" href="#">S81 Series</a></li>
+                        <li><a class="dropdown-item" href="#">Lockstitch</a></li>
+                        <li><a class="dropdown-item" href="#">Overlock</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Juki</a>
+                    <ul class="dropdown-menu shadow border-0">
+                        <li><a class="dropdown-item" href="#">Industrial</a></li>
+                    </ul>
+                </li>-->
+                <li class="nav-item"><a class="nav-link" href="silversun.html">Silversun</a></li>
+                <li class="nav-item"><a class="nav-link active" href="cerliani.html">Cerliani</a></li>
+                <li class="nav-item"><a class="nav-link " href="juki.html">Juki</a></li>
+                 <li class="nav-item"><a class="nav-link" href="richpeace.html">Richpeace</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <a href="#" class="btn btn-search"><i class="fa-solid fa-magnifying-glass me-2"></i>Search</a>
+        </div>
+    </div>
+</nav>
+<!-- =============================================
+     HERO
+============================================= -->
+<header class="hero-carousel">
+
+<div class="container">
+<div class="row align-items-center">
+
+<div class="col-lg-6" data-aos="fade-right">
+
+<h1 class="hero-title text-white mb-4">
+Hooks &amp; Bobbin Cases
+</h1>
+
+<p class="lead text-white opacity-75 mb-4">
+Precision Italian Engineering for Industrial Sewing Machines
+</p>
+</div>
+</div>
+</div>
+</header>
+<!-- =============================================
+     PAGE HERO
+=============================================
+<header class="page-hero">
+    <div class="container" data-aos="fade-up">
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Products</a></li>
+                <li class="breadcrumb-item active">Cerliani</li>
+            </ol>
+        </nav>
+        <div class="brand-badge mb-3">
+            <div class="brand-badge-dot"><i class="fa-solid fa-gear"></i></div>
+            <span>Cerliani — Italy</span>
+        </div>
+        <h1 class="fw-800 mb-2" style="font-size:2.6rem;font-weight:800;">Hooks &amp; Bobbin Cases</h1>
+        <p class="lead opacity-75 mb-0">Precision Italian Engineering for Industrial Sewing Machines</p>
+    </div>
+</header> -->
+
+<!-- =============================================
+     INTRO STRIP
+============================================= -->
+<div class="intro-strip">
+    <div class="container">
+        <div class="row text-center g-3">
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="50">
+                <i class="fa-solid fa-flag mb-2 d-block"></i>
+                <h6>Made in Italy</h6>
+                <p>Genuine Cerliani Parts</p>
+            </div>
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-circle-check mb-2 d-block"></i>
+                <h6>ISO Certified</h6>
+                <p>Precision Engineered</p>
+            </div>
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="150">
+                <i class="fa-solid fa-truck-fast mb-2 d-block"></i>
+                <h6>Pan India Delivery</h6>
+                <p>Fast &amp; Reliable Shipping</p>
+            </div>
+            <div class="col-6 col-md-3 intro-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-headset mb-2 d-block"></i>
+                <h6>Expert Support</h6>
+                <p>Technical Guidance</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =============================================
+     ABOUT CERLIANI
+============================================= -->
+<section class="about-cerliani">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="img-showcase">
+                    <img src="https://m.media-amazon.com/images/I/61BHTTpkviL._AC_UF894,1000_QL80_.jpg"
+                         alt="Cerliani precision hooks">
+                    <div class="img-overlay-badge"><i class="fa-solid fa-award me-2"></i>Italian Precision Since 1945</div>
+                </div>
+            </div>
+            <div class="col-lg-7" data-aos="fade-left">
+                <span class="section-label">About the Brand</span>
+                <h2 class="fw-bold mb-2" style="font-size:2rem;">Why Cerliani?</h2>
+                <div class="accent-bar"></div>
+                <p class="lh-lg mb-4">
+                    <strong>Cerliani (MCE)</strong> is one of Italy's most respected manufacturers of precision sewing machine 
+                    hooks, bobbin cases, and related components. Founded in 1945, their products are trusted by 
+                    industrial sewing machine makers and garment factories worldwide for uncompromising quality 
+                    and stitch consistency.
+                </p>
+                <p class="lh-lg mb-4">
+                    SMX India is the <strong>authorised distributor</strong> for Cerliani products across India. 
+                    Every hook and bobbin case is manufactured to exact tolerances, ensuring smooth operation, 
+                    reduced downtime, and superior thread handling across all fabric types.
+                </p>
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <div style="width:38px;height:38px;background:rgba(0,160,233,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fa-solid fa-layer-group" style="color:var(--smx-cyan);font-size:.9rem;"></i>
+                            </div>
+                            <span style="font-size:.85rem;font-weight:600;">CB &amp; Rotary Hook Systems</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <div style="width:38px;height:38px;background:rgba(0,160,233,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fa-solid fa-microscope" style="color:var(--smx-cyan);font-size:.9rem;"></i>
+                            </div>
+                            <span style="font-size:.85rem;font-weight:600;">Micron-Level Tolerance</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <div style="width:38px;height:38px;background:rgba(0,160,233,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fa-solid fa-shield-halved" style="color:var(--smx-cyan);font-size:.9rem;"></i>
+                            </div>
+                            <span style="font-size:.85rem;font-weight:600;">Special Anti-Friction Coatings</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3">
+                            <div style="width:38px;height:38px;background:rgba(0,160,233,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fa-solid fa-industry" style="color:var(--smx-cyan);font-size:.9rem;"></i>
+                            </div>
+                            <span style="font-size:.85rem;font-weight:600;">Compatible with Major Brands</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============================================
+     FILTER BAR
+============================================= -->
+<div class="filter-bar">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                <span style="font-size:12px;font-weight:700;color:#333;margin-right:4px;">Filter:</span>
+                <button class="filter-btn active" onclick="filterCards('all',this)">All Products</button>
+                <button class="filter-btn" onclick="filterCards('cb',this)">CB Shuttle</button>
+                <button class="filter-btn" onclick="filterCards('rotary',this)">Rotary Hook</button>
+                <button class="filter-btn" onclick="filterCards('heavy',this)">Heavy Duty</button>
+                <button class="filter-btn" onclick="filterCards('coated',this)">Special Coating</button>
+            </div>
+            <span class="results-count" id="results-count">Showing 8 products</span>
+        </div>
+    </div>
+</div>
+
+<!-- =============================================
+     PRODUCT GRID
+============================================= -->
+<section class="product-section">
+    <div class="container">
+        <div class="row g-4" id="product-grid">
+
+            <!-- 1. CB Shuttle Hook -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="cb" data-aos="fade-up" data-aos-delay="50">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag">CB Shuttle</span>
+                        <img src="https://tiimg.tistatic.com/fp/1/009/273/sewing-machine-shuttle-hook-911.jpg"
+                             alt="CB Shuttle Hook"
+                             onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=300&h=240&q=80'">
+                    </div>
+                    <div class="product-body">
+                        <h3>CB Shuttle Hook</h3>
+                        <p>Standard CB-type shuttle hook for single-needle lockstitch machines. Engineered for skip-free stitching at high speeds.</p>
+                        <a href="#" class="btn-enquire open-product"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+
+        data-title="CB Shuttle Hook"
+        data-img="https://tiimg.tistatic.com/fp/1/009/273/sewing-machine-shuttle-hook-911.jpg"
+        data-desc="Standard CB-type shuttle hook for single needle lockstitch machines. Ensures smooth and skip-free stitching."
+
+        data-type="CB Shuttle"
+        data-use="Lockstitch Machine"
+        data-quality="High Precision">
+
+    Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. CB Bobbin Case -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="cb" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag">CB Shuttle</span>
+                        <img src="https://tiimg.tistatic.com/fp/1/005/525/sewing-machine-bobbin-case-230.jpg"
+                             alt="CB Bobbin Case"
+                             onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=300&h=240&q=80'">
+                    </div>
+                    <div class="product-body">
+                        <h3>CB Bobbin Case</h3>
+                        <p>Precision CB bobbin case with consistent thread tension. Compatible with Juki, Brother, Singer, and major machine brands.</p>
+                        <a href="#" class="btn-enquire open-product"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+
+        data-title="CB Bobbin Case"
+        data-img="https://tiimg.tistatic.com/fp/1/005/525/sewing-machine-bobbin-case-230.jpg"
+        data-desc="Precision bobbin case ensuring consistent thread tension and smooth stitching performance."
+
+        data-type="Bobbin Case"
+        data-use="Industrial Sewing"
+        data-quality="Durable Build">
+
+    Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Horizontal Rotary Hook -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="rotary" data-aos="fade-up" data-aos-delay="150">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag rotary">Rotary Hook</span>
+                        <img src="https://tiimg.tistatic.com/fp/1/006/018/horizontal-type-rotary-hook-291.jpg"
+                             alt="Horizontal Rotary Hook"
+                             onerror="this.src='https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=300&h=240&q=80'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Horizontal Rotary Hook</h3>
+                        <p>High-speed horizontal rotary hook for smooth, vibration-free operation. Ideal for light to medium weight fabrics.</p>
+                        <a href="#" class="btn-enquire open-product"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+
+        data-title="Horizontal Rotary Hook"
+        data-img="https://tiimg.tistatic.com/fp/1/006/018/horizontal-type-rotary-hook-291.jpg"
+        data-desc="High-speed rotary hook designed for smooth and vibration-free operation."
+
+        data-type="Rotary Hook"
+        data-use="Light to Medium Fabrics"
+        data-quality="High Speed">
+
+    Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Vertical Rotary Hook -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="rotary" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag rotary">Rotary Hook</span>
+                        <img src="https://cpimg.tistatic.com/04850652/b/4/Vertical-Type-Rotary-Hook.jpg"
+                             alt="Vertical Rotary Hook"
+                             onerror="this.src='https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=300&h=240&q=80'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Vertical Rotary Hook</h3>
+                        <p>Precision vertical rotary hook for chainstitch and bar-tacking machines. Superior durability under continuous production.</p>
+                        <a href="#" class="btn-enquire open-product"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+
+        data-title="Vertical Rotary Hook"
+        data-img="https://cpimg.tistatic.com/04850652/b/4/Vertical-Type-Rotary-Hook.jpg"
+        data-desc="Precision vertical rotary hook suitable for heavy-duty continuous production."
+
+        data-type="Rotary Hook"
+        data-use="Heavy Fabrics"
+        data-quality="Long Life">
+
+    Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Large Capacity Rotary Hook -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="rotary" data-aos="fade-up" data-aos-delay="250">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag rotary">Rotary Hook</span>
+                        <img src="https://tiimg.tistatic.com/fp/1/003/208/rotary-hook-for-sewing-machine-903.jpg"
+                             alt="Large Capacity Hook"
+                             onerror="this.src='https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=300&h=240&q=80'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Large Capacity Rotary Hook</h3>
+                        <p>Large bobbin rotary hook for reduced bobbin changes in high-volume production lines running long continuous seams.</p>
+                        <a href="#" class="btn-enquire open-product"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+
+        data-title="Large Capacity Rotary Hook"
+        data-img="https://tiimg.tistatic.com/fp/1/003/208/rotary-hook-for-sewing-machine-903.jpg"
+        data-desc="Large bobbin rotary hook designed to reduce bobbin changes in high-volume production lines running long continuous seams."
+
+        data-type="Rotary Hook"
+        data-application="High Volume Production"
+        data-feature="Large Bobbin Capacity">
+
+    Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Hooks for Thick Thread & Heavy Material -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="heavy" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag heavy">Heavy Duty</span>
+                        <img src="https://m.media-amazon.com/images/I/61pZXJkiMGL._AC_UF1000,1000_QL80_.jpg"
+                             alt="Heavy Duty Hook"
+                             onerror="this.src='https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=300&h=240&q=80'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Hook for Thick Thread &amp; Heavy Material</h3>
+                        <p>Reinforced hook built for denim, canvas, leather, and upholstery. Handles thick threads without skipping or breakage.</p>
+                       <a href="#" class="btn-enquire open-product"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+
+        data-title="Hook for Thick Thread & Heavy Material"
+        data-img="https://m.media-amazon.com/images/I/61pZXJkiMGL._AC_UF1000,1000_QL80_.jpg"
+        data-desc="Reinforced hook built for denim, canvas, leather, and upholstery. Handles thick threads without skipping or breakage."
+
+        data-type="Heavy Duty Hook"
+        data-application="Denim / Leather"
+        data-feature="Handles Thick Thread">
+
+    Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Heavy Duty Bobbin Case -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="heavy" data-aos="fade-up" data-aos-delay="350">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag heavy">Heavy Duty</span>
+                        <img src="https://m.media-amazon.com/images/I/71yzhAUB7ML._AC_UF894,1000_QL80_.jpg"
+                             alt="Heavy Duty Bobbin Case"
+                             onerror="this.src='https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=300&h=240&q=80'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Heavy Duty Bobbin Case</h3>
+                        <p>Extra-strength bobbin case for heavy-duty lockstitch machines. Maintains precise tension with thick or coarse threads.</p>
+                        <a href="#" class="btn-enquire open-product"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+
+        data-title="Heavy Duty Bobbin Case"
+        data-img="https://m.media-amazon.com/images/I/71yzhAUB7ML._AC_UF894,1000_QL80_.jpg"
+        data-desc="Extra-strong bobbin case for heavy-duty lockstitch machines. Maintains precise tension with thick or coarse threads."
+
+        data-type="Bobbin Case"
+        data-application="Heavy Fabrics"
+        data-feature="High Tension Stability">
+
+    Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Special Coating Hook -->
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="coated" data-aos="fade-up" data-aos-delay="400">
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <span class="prod-tag coated">Special Coating</span>
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2025/1/481567339/HC/OV/IN/20881299/ss-coat-hook-ro-22-500x500.png"
+                             alt="Special Coating Hook"
+                             onerror="this.src='https://images.unsplash.com/photo-1516110833967-0b5716ca1387?auto=format&fit=crop&w=300&h=240&q=80'">
+                    </div>
+                    <div class="product-body">
+                        <h3>Special Coating Hook</h3>
+                        <p>Anti-friction DLC or nitride-coated hook for extended service life and reduced thread wear. Ideal for synthetic fabrics.</p>
+                        <a href="#" class="btn-enquire open-product"
+        data-bs-toggle="modal"
+        data-bs-target="#productModal"
+
+        data-title="Special Coating Hook"
+        data-img="https://5.imimg.com/data5/SELLER/Default/2025/1/481567339/HC/OV/IN/20881299/ss-coat-hook-ro-22-500x500.png"
+        data-desc="Anti-friction DLC or nitride-coated hook for extended service life and reduced thread wear. Ideal for synthetic fabrics."
+
+        data-type="Rotary Hook"
+        data-application="Synthetic Fabrics"
+        data-feature="Anti-Friction Coating">
+
+    Enquire Now
+</a>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /row -->
+    </div>
+</section>
+<!--popup-->
+<div class="modal fade" id="productModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-4 overflow-hidden">
+
+      <div class="modal-body p-4">
+
+        <div class="row g-4">
+
+          <!-- LEFT IMAGE -->
+          <div class="col-lg-6 text-center border-end">
+            <img id="pImage" class="img-fluid" style="max-height:350px;">
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="col-lg-6">
+
+            <h4 id="pTitle" class="fw-bold"></h4>
+
+            <!-- SPEC TABLE -->
+            <table class="table table-sm">
+              <tbody id="pSpecs"></tbody>
+            </table>
+
+            <!-- DESCRIPTION -->
+            <p id="pDesc" class="small text-muted"></p>
+
+            <!-- ENQUIRY FORM -->
+            <div class="border-top pt-3 mt-3">
+              <h6 class="fw-bold">Send Enquiry</h6>
+
+              <form>
+                <input type="hidden" id="productName">
+
+                <div class="row g-2 mt-2">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="email" class="form-control" placeholder="Email Address">
+                  </div>
+                  <div class="col-12">
+                    <textarea class="form-control" rows="2" placeholder="Your Requirement"></textarea>
+                  </div>
+                  <div class="col-12 text-end">
+                    <button class="btn btn-success px-4">Send Enquiry</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll(".open-product").forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    document.getElementById("pTitle").innerText = this.dataset.title;
+    document.getElementById("pImage").src = this.dataset.img;
+    document.getElementById("pDesc").innerText = this.dataset.desc;
+
+    document.getElementById("productName").value = this.dataset.title;
+
+    document.getElementById("pSpecs").innerHTML = `
+      <tr><td>Type</td><td>${this.dataset.type || ''}</td></tr>
+      <tr><td>Application</td><td>${this.dataset.use || this.dataset.application || ''}</td></tr>
+      <tr><td>Quality / Feature</td><td>${this.dataset.quality || this.dataset.feature || ''}</td></tr>
+    `;
+  });
+});
+</script>
+<style>
+    .btn-enquire {
+    border: 2px solid #006699;
+    color: #006699;
+    padding: 8px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+    align-self: flex-start;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s;
+}
+
+.btn-enquire:hover {
+    background: #006699;
+    color: #fff;
+}
+
+.modal-content {
+    border-radius: 16px;
+}
+</style>
+<!-- =============================================
+     WHY CERLIANI — dark banner
+============================================= -->
+<section class="why-banner">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-label" style="color:var(--smx-cyan);">The Cerliani Difference</span>
+            <h2 class="fw-bold" style="font-size:2rem;">Built for Industrial Performance</h2>
+        </div>
+        <div class="row g-0 text-center">
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <h6>High Speed Rated</h6>
+                <p>Tested up to 8,000 SPM. Zero skip stitches even at peak machine operating speeds.</p>
+            </div>
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-ruler-combined"></i></div>
+                <h6>Micron Precision</h6>
+                <p>Manufactured to micron-level tolerances for perfect stitch loop capture every time.</p>
+            </div>
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-recycle"></i></div>
+                <h6>Long Service Life</h6>
+                <p>Special surface treatments extend hook life 3–5× compared to standard aftermarket parts.</p>
+            </div>
+            <div class="col-md-3 why-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="why-icon mx-auto"><i class="fa-solid fa-puzzle-piece"></i></div>
+                <h6>Universal Fit</h6>
+                <p>Compatible with Juki, Pfaff, Brother, Singer, Pegasus, and all other major machine brands.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =============================================
+     FEATURES STRIP — green (same as index.html)
+============================================= 
+<section class="features-strip">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-4 fstrip-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="fstrip-icon"><i class="fa-solid fa-globe"></i></div>
+                <h6 class="fw-bold mb-1">Global Importers</h6>
+                <p class="small opacity-75 mb-0">Sourcing genuine Cerliani parts directly from Italy</p>
+            </div>
+            <div class="col-md-4 fstrip-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="fstrip-icon"><i class="fa-solid fa-gear"></i></div>
+                <h6 class="fw-bold mb-1">Since 1970 Sewing Solutions</h6>
+                <p class="small opacity-75 mb-0">Decades of expertise in precision sewing components</p>
+            </div>
+            <div class="col-md-4 fstrip-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="fstrip-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h6 class="fw-bold mb-1">Results You Can Trust</h6>
+                <p class="small opacity-75 mb-0">98% customer satisfaction across India</p>
+            </div>
+        </div>
+    </div>
+</section>-->
+
+<!-- =============================================
+     CTA SECTION
+============================================= 
+<section class="cta-section">
+    <div class="container text-center" data-aos="zoom-in">
+        <h2 class="fw-bold mb-3" style="font-size:2rem;">Looking for Genuine Cerliani Parts?</h2>
+        <p class="lead opacity-75 mb-4">Get precision hooks and bobbin cases delivered pan-India. Talk to our experts today.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="tel:7506625436" class="btn btn-light btn-lg px-5 rounded-pill fw-bold" style="color:var(--smx-blue);">
+                <i class="fa-solid fa-phone me-2"></i>Call Now
+            </a>
+            <a href="mailto:Smxindia15@gmail.com" class="btn btn-outline-light btn-lg px-5 rounded-pill fw-bold">
+                <i class="fa-solid fa-envelope me-2"></i>Email Us
+            </a>
+        </div>
+    </div>
+</section>-->
+
+<!-- =============================================
+     FOOTER — exact from index.html
+============================================= -->
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div class="row g-5">
+            
+            <div class="col-lg-4 ">
+                <!-- Logo Instead of Text -->
+                <img src="smx1.png" alt="SMX India Logo" style="width:150px; ">
+
+                <p class="opacity-75 mt-3">
+                    Leading the Indian market with premium industrial sewing and embroidery technology since 1994.
+                </p>
+
+                <div class="d-flex gap-3 mt-4">
+                    <a href="https://www.facebook.com/Smxindia/" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/smxindia" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=917506625436" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="smxindia15@gmail.com" class="btn btn-outline-light btn-sm rounded-circle">
+                       <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@smxindia" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/sewing-machine-exchange-india/" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 footer-links">
+                <h6 class="footer-heading">Company</h6>
+                <a href="#">About Us</a>
+                <a href="#brands">Our Brands</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="col-lg-6 footer-contact-info">
+                <h6 class="footer-heading">Support</h6>
+                <p class="mb-2"><i class="fa-solid fa-envelope me-2"></i>smxindia15@gmail.com</p>
+                <p class="mb-2"><i class="fa-solid fa-phone me-2"></i> 7506625436 / 9324613436</p>
+                <p class="mb-2"><i class="fa-solid fa-location-dot me-2"></i>
+                    The Tarun Plastic Estate, Andheri East,<br> Mumbai, Maharashtra 400069
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<style>
+    .main-footer img {
+    max-width: 100px;
+    height: auto;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+
+    function filterCards(category, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const items = document.querySelectorAll('.product-item');
+        let count = 0;
+        items.forEach(item => {
+            const match = category === 'all' || item.dataset.category === category;
+            item.style.display = match ? '' : 'none';
+            if (match) count++;
+        });
+        document.getElementById('results-count').textContent =
+            `Showing ${count} product${count !== 1 ? 's' : ''}`;
+    }
+</script>
+</body>
+</html>
